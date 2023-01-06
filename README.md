@@ -113,7 +113,52 @@ Below are the steps used to add Django to this project
 
 ### Models
 
-We can now create the models that will be created in the database. 
+I can now create the models that will be created in the database.
+
+One model with type field, same template, two different views and hence two navbar options and urls. Each view constructs the queryset differently. One view builds the queryset from suspended flow viscometers and the other builds the queryset from reverse flow viscometers. The select element then contains the objects from the queryset as its child option elements.
+
+The one model approach's potential problems with messed-up ordering could be tackled by ordering by viscometer type and size order - give suspended flow type an integer value of 0 and reverse flow type an integer value of 1, then all suspended flow viscometers display first and hopefully in size order
+
+The calibration page view builds its queryset from all viscometer objects, ordered by type and size, so that the drop-down menu is populated with all viscometers
+
+This would work for the viscometer recalibration page as well
+
+Later, add functionality that checks current date and checks to see if this is before or after expiry date. If after expiry_date, disable in drop-down menu or update view queryset builder to disclude these viscometers 
+
+Model information:
+- class name - Viscometer
+- model fields:
+    - size, a DecimalField with max_digits 2, decimal_places 1, some validation for admin panel
+    - serial_number, a CharField with max_length 10
+    - constant, a DecimalField with max_digits 8, decimal_places 7, some validation for admin panel
+    - calibration date, a DateField with auto_now_add False
+    - expiry_date, a DateField with auto_now_add False
+- class methods:
+    - Meta with verbose_name and ordering of size and constant (ordering is a list and can accept multiple values)
+    - Magic string method to return viscometer name which combines size and serial number, prefixed by L
+
+Once all these are defined:
+
+- Run `python3 manage.py makemigrations --dry-run` to check that Viscometer model will be created properly
+- Run `python3 manage.py makemigrations` to create viscometer model
+- Run `python3 manage.py migrate` to migrate viscometer model to database
+
+### Superuser
+
+Now I must create a superuser to enable access to the admin panel:
+
+- Run `python3 manage.py createsuperuser`
+    - Enter username
+    - forgo email
+    - Enter password twice
+
+- Run `python3 manage.py runserver` to run development server
+
+- In URL bar, append `/admin/` to access superuser sign-in page
+
+- sign in using superuser credentials
+
+### Views
 
 ## Notes
 
@@ -122,3 +167,4 @@ We can now create the models that will be created in the database.
 
 `python3 manage.py runserver` if Django being used
 
+Viscometer information page? - list all viscometers, calibration dates, expiry dates, etc
