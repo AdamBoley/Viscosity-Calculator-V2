@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="keywords" content="kinematic viscosity, viscosity, ASTM, ASTM D445, D445, petrochemistry">
+    <meta name="description" content="A tool for performing viscosity calculations on petrochemical samples">
+    <title>Viscosity Calculator</title>
+</head>
+<body id="index-body">
+    
+    <header>
+        <h1 class="heading">Viscosity Calculator</h1>
+
+        <p class="heading">
+            Welcome to the Viscosity Calculator, a scientific tool that automates 
+            all of the calculations in ASTM standard test method D445
+        </p>
+        <p class="heading">
+            <a href="discussion.html" target="_blank">Click here to open a new tab that discusses the tool and provides guidance on how to use it and get the most out of it.</a> 
+        </p>
+        <p class="heading">
+            Use the drop-down menu below to select the calculation you want to tool to perform. 
+        </p>
+    </header>
+
+    <main>
+
+        <div id="calculation-selector-div">
+            
+            <select id="calculation-selector">
+                <option selected value="determinability">Determinability</option>
+                <option value="repeatability">Repeatability</option>
+                <option value="reproducibility">Reproducibility</option>
+                <option value="calibration">Calibration of viscometers</option>
+                <option value="recalibration">Recalibration of viscometer constants</option>
+            </select>
+        </div>
+
+        <article id="determinability-calculations" class="unhide calculation-article">
+
+            <h2 class="heading">Determinability checker</h2>
+
+            <div class="description">
+
+                <h3 class="heading">Instructions for use</h3>
+
+                <ol>
+
+                    <li>Select your the sample type and temperature from the drop-down menu below that most closely matches the test you are checking</li>
+                    <li>If you are unsure what sample type to select, <a href="discussion.html#sample" target="_blank">click here to open the guidance page</a> </li>
+                    <li>Click either the <div class="mimic-button">Ubbelohde viscometer</div> button or the <div class="mimic-button">Zeitfuchs viscometers</div> button, depending on what viscometers you used</li>
+                    <li>Enter your run-times into the labelled boxes</li>
+                    <li>If you used a suspended flow viscometer, enter the constant in the labelled box</li>
+                    <li>If you used a pair of cross-arm viscometers, enter the constants in the labelled boxes, being sure to match them to the run-times</li>
+                    <li>Check your entered information and press the <span class="mimic-button">calculate</span> button</li>
+                    <li>The tool will calculate all of the data you need to check a viscosity test</li>
+                    <li>Click the <span class="mimic-button">calculation details</span> button to see the unrounded calculation values</li>
+                    <li>Once your have checked your data, click the <span class="mimic-button">reset</span> button to clear the inputs and outputs, and reset the tool</li>
+
+                </ol>
+
+            </div>
+
+            <div id="determinability-user-input" class="user-input">
+
+                <div id="determinability-select" class="select user-input-div">
+
+                    <p>Select your sample type and temperature</p>
+
+                    <select id="sample-type-determinability">
+                        <option disabled selected value="disabled"> -- select an option -- </option>
+                        <option value="BO40">Base Oils at 40C</option>
+                        <option value="BO100">Base Oils at 100C</option>
+                        <option value="FO40">Formulated Oils at 40C</option>
+                        <option value="FO100">Formulated Oils at 100C</option>
+                        <option value="FO150">Formulated Oils at 150C</option>
+                        <option value="KD40">Kerosene, diesel and biodiesel at 40C</option>
+                        <option value="PW100">Petroleum wax at 100C</option>
+                        <option value="RFO50">Residual Fuel Oils at 50C</option>
+                        <option value="RFO100">Residual Fuel Oils at 100C</option>
+                        <option value="ADD100">Additives at 100C</option>
+                        <option value="GO40">Gas Oils at 40C</option>
+                        <option value="JFM20">Jet Fuels at -20C</option>
+                        <option value="CR">Crude oils and residues</option>
+                    </select>
+                    
+                    <p>Select your viscometer type</p>
+                    <button id="ubbelohde-button">Ubbelohde viscometer</button>
+                    <button id="zeitfuchs-button">Zeitfuchs viscometers</button>
+
+                </div>
+
+                <div id="determinability-input-1">
+                    <div id="run-time-1-div" class="user-input-div">
+                        <label for="run-time-1">Run Time 1</label>
+                        <input type="number" id="run-time-1" min="200" max="900"><span class="input-unit">seconds</span>
+                    </div>
+                    <div id="constant-1-div" class="user-input-div">
+                        <label for="constant-1-input" id="constant-1">Constant 1:</label>
+                        <input type="number" min="0" max="100" id="constant-1-input"><span class="input-unit" id="determinability-constant-1-units">mm<span class="superscript">2</span>/s<span class="superscript">-2</span></span>
+                    </div>
+                </div>
+                <div id="determinability-input-2">
+                    <div id="run-time-2-div" class="user-input-div">
+                        <label for="run-time-2">Run Time 2</label>
+                        <input type="number" id="run-time-2" min="200" max="900"><span class="input-unit">seconds</span>
+                    </div>
+                    <div id="constant-2-div" class="user-input-div">
+                        <label for="constant-2-input" id="constant-2">Constant 2:</label>
+                        <input type="number" min="0" max="100" id="constant-2-input"><span class="input-unit" id="determinability-constant-2-units">mm<span class="superscript">2</span>/s<span class="superscript">-2</span></span>
+                    </div>
+                </div>
+                <div id="constant-div" class="user-input-div">
+                    <label for="constant-input" id="constant">Constant:</label>
+                    <input type="number" min="0" max="100" id="constant-input"><span class="input-unit" id="determinability-constant-units">mm<span class="superscript">2</span>/s<span class="superscript">-2</span></span>
+                </div>
+
+                <br class="line-break">
+
+                <div id="submit-div" class="user-input-div">
+                    
+                    <button type="submit" id="submit-ubbelohde">calculate</button>
+                    <button type="submit" id="submit-zeitfuchs">calculate</button>
+                    
+                    <button id="reset-determinability">reset</button>
+
+                </div>
+
+            </div>
+
+            <div id="determinability-calculated-output" class="calculated-output">
+
+                <div>
+                    <p>Calculation results:</p>
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="determinability-kv-1-label" class="output-label">Kinematic Viscosity 1:</p>
+                    <span id="determinability-kv-1"></span><span class="output-unit" id="determinability-kv-1-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="determinability-kv-2-label" class="output-label">Kinematic Viscosity 2:</p>
+                    <span id="determinability-kv-2"></span><span class="output-unit" id="determinability-kv-2-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="determinability-final-kv-label" class="output-label">Final Calculated Viscosity:</p>
+                    <span id="determinability-final-kv"></span><span class="output-unit" id="determinability-final-kv-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="determinability-equation-label" class="output-label">Determinability equation:</p>
+                    <span id="determinability-equation"></span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="determinability-factor-label" class="output-label">Determinability factor:</p>
+                    <span id="determinability-factor"></span><span class="output-unit" id="determinability-factor-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="determinability-upper-limit-label" class="output-label">Determinability upper limit:</p>
+                    <span id="determinability-upper-limit"></span><span class="output-unit" id="determinability-upper-limit-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="determinability-lower-limit-label" class="output-label">Determinability lower limit:</p>
+                    <span id="determinability-lower-limit"></span><span class="output-unit" id="determinability-lower-limit-units">cSt</span>
+
+                </div>
+
+                <div id="determinability-output" class="calculated-output-div"></div>
+
+                <button id="determinability-details-button">Calculation details</button>
+
+                <div class="calculated-output-div" id="determinability-details"></div>
+
+            </div>
+
+        </article>
+
+        <br class="line-break">
+
+        <article id="repeatability-calculations" class="hide">
+
+            <h2 class="heading">Repeatability checker</h2>
+
+            <div class="description">
+
+                <h3 class="heading">Instructions for use</h3>
+
+                <ol>
+                    <li>Select the sample type and temperature that most closely matches the results you are checking the repeatability of from the drop-down menu</li>
+                    <li>If you are unsure what sample type to select, <a href="discussion.html#sample" target="_blank">click here to open the guidance page</a></li>
+                    <li>Enter the two viscosity results into the labelled boxes</li>
+                    <li>Click the <span class="mimic-button">calculate</span> button and the tool will perform the calculations and tell you whether the results are repeatable or not</li>
+                    <li>Click the <span class="mimic-button">reset</span> button to clear the inputs and outputs and ready the tool to check more results</li>
+                </ol>
+
+            </div>
+
+            <div id="repeatability-user-input" class="user-input">
+
+                <div class="select user-input-div">
+
+                    <p>Select your sample type and temperature</p>
+
+                    <select id="sample-type-repeatability">
+                
+                        <option disabled selected value="disabled"> -- select an option -- </option>
+                        <option value="BO40">Base Oils at 40C</option>
+                        <option value="BO100">Base Oils at 100C</option>
+                        <option value="FO40">Formulated Oils at 40C</option>
+                        <option value="FO100">Formulated Oils at 100C</option>
+                        <option value="FO150">Formulated Oils at 150C</option>
+                        <option value="PW100">Petroleum wax at 100C</option>
+                        <option value="RFO50">Residual Fuel Oils at 50C</option>
+                        <option value="RFO100">Residual Fuel Oils at 100C</option>
+                        <option value="ADD100">Additives at 100C</option>
+                        <option value="GO40">Gas Oils at 40C</option>
+                        <option value="JFM20">Jet Fuels at -20C</option>
+                        <option value="KD40">Kerosene, diesel and biodiesel at 40C</option>
+                        <option value="UFO40">Used or in-service Formulated Oils at 40C</option>
+                        <option value="UFO100">Used or in-service Formulated Oils at 100C</option>
+                        <option value="CR">Crude oils and residues</option>
+
+                    </select>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <label for="viscosity-repeatability-1">Viscosity 1:</label>
+                    <input type="number" id="viscosity-repeatability-1"><span class="input-unit" id="repeatability-kv-1-units">cSt</span>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <label for="viscosity-repeatability-2">Viscosity 2:</label>
+                    <input type="number" id="viscosity-repeatability-2"><span class="input-unit" id="repeatability-kv-2-units">cSt</span>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <button id="submit-repeatability">calculate</button>
+                    <button id="repeatability-reset">reset</button>
+
+                </div>
+
+            </div>
+
+            <div id="repeatability-calculated-output" class="calculated-output">
+
+                <div>
+                    <p>Calculation results:</p>
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="repeatability-average-viscosity-label" class="output-label">Average viscosity:</p>
+                    <span id="repeatability-average-viscosity"></span><span class="output-unit" id="repeatability-average-viscosity-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="repeatability-equation-label" class="output-label">Repeatability equation:</p>
+                    <span id="repeatability-equation"></span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="repeatability-factor-label" class="output-label">Repeatability factor:</p>
+                    <span id="repeatability-factor"></span><span class="output-unit" id="repeatability-factor-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="repeatability-upper-limit-label" class="output-label">Repeatability upper limit:</p>
+                    <span id="repeatability-upper-limit"></span><span class="output-unit" id="repeatability-upper-limit-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="repeatability-lower-limit-label" class="output-label">Repeatability lower limit:</p>
+                    <span id="repeatability-lower-limit"></span><span class="output-unit" id="repeatability-lower-limit-units">cSt</span>
+
+                </div>
+
+                <div id="repeatability-output" class="calculated-output-div"></div>
+
+                <button id="repeatability-details-button">Calculation details</button>
+
+                <div class="calculated-output-div" id="repeatability-details"></div>
+
+            </div>
+
+        </article>
+
+        <br class="line-break">
+
+        <article id="reproducibility-calculations" class="hide">
+
+            <h2 class="heading">Reproducibility checker</h2>
+
+            <div class="description">
+
+                <h3 class="heading">Instructions for use</h3>
+
+                <ol>
+                    <li>Select the sample type and temperature that most closely matches the results you are checking the repeatability of from the drop-down menu</li>
+                    <li>If you are unsure what sample type to select, <a href="discussion.html#sample" target="_blank">click here to open the guidance page</a></li>
+                    <li>Enter the two viscosity results into the labelled boxes</li>
+                    <li>Click the <span class="mimic-button">calculate</span> button and the tool will perform the calculations and tell you whether the results are repeatable or not</li>
+                    <li>Click the <span class="mimic-button">reset</span> button to clear the inputs and outputs and ready the tool to check more results</li>
+                </ol>
+
+            </div>
+
+            <div id="reproducibility-user-input" class="user-input">
+
+                <div class="select user-input-div">
+
+                    <p>Select your sample type and temperature</p>
+
+                    <select id="sample-type-reproducibility">
+                
+                        <option disabled selected value="disabled"> -- select an option -- </option>
+                        <option value="BO40">Base Oils at 40C</option>
+                        <option value="BO100">Base Oils at 100C</option>
+                        <option value="FO40">Formulated Oils at 40C</option>
+                        <option value="FO100">Formulated Oils at 100C</option>
+                        <option value="FO150">Formulated Oils at 150C</option>
+                        <option value="PW100">Petroleum wax at 100C</option>
+                        <option value="RFO50">Residual Fuel Oils at 50C</option>
+                        <option value="RFO100">Residual Fuel Oils at 100C</option>
+                        <option value="ADD100">Additives at 100C</option>
+                        <option value="GO40">Gas Oils at 40C</option>
+                        <option value="JFM20">Jet Fuels at -20C</option>
+                        <option value="KD40">Kerosene, diesel and biodiesel at 40C</option>
+                        <option value="UFO40">Used or in-service Formulated Oils at 40C</option>
+                        <option value="UFO100">Used or in-service Formulated Oils at 100C</option>
+                        <option value="CR">Crude oils and residues</option>
+
+                    </select>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <label for="viscosity-reproducibility-1">Viscosity 1:</label>
+                    <input type="number" id="viscosity-reproducibility-1"><span class="input-unit" id="reproducibility-kv-1-units">cSt</span>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <label for="viscosity-reproducibility-2">Viscosity 2:</label>
+                    <input type="number" id="viscosity-reproducibility-2"><span class="input-unit" id="reproducibility-kv-2-units">cSt</span>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <button id="submit-reproducibility">calculate</button>
+                    <button id="reproducibility-reset">reset</button>
+
+                </div>
+
+            </div>
+
+            <div id="reproducibility-calculated-output" class="calculated-output">
+
+                <div>
+                    <p>Calculation results:</p>
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="reproducibility-average-viscosity-label" class="output-label">Average viscosity:</p>
+                    <span id="reproducibility-average-viscosity"></span><span class="output-unit" id="reproducibility-average-viscosity-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="reproducibility-equation-label" class="output-label">Reproducibility equation:</p>
+                    <span id="reproducibility-equation"></span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="reproducibility-factor-label" class="output-label">Reproducibility factor:</p>
+                    <span id="reproducibility-factor"></span><span class="output-unit" id="reproducibility-factor-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="reproducibility-upper-limit-label" class="output-label">Reproducibility upper limit:</p>
+                    <span id="reproducibility-upper-limit"></span><span class="output-unit" id="reproducibility-upper-limit-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="reproducibility-lower-limit-label" class="output-label">Reproducibility lower limit:</p>
+                    <span id="reproducibility-lower-limit"></span><span class="output-unit" id="reproducibility-lower-limit-units">cSt</span>
+
+                </div>
+
+                <div id="reproducibility-output" class="calculated-output-div"></div>
+
+                <button id="reproducibility-details-button">Calculation details</button>
+
+                <div class="calculated-output-div" id="reproducibility-details"></div>
+
+            </div>
+
+        </article>
+
+        <br class="line-break">
+
+        <article id="viscometer-calibration" class="hide">
+
+            <h2 class="heading">Viscometer Calibration</h2>
+
+            <div class="description">
+
+                <h3 class="heading">Instructions for use</h3>
+
+                <ol>
+                    <li>Perform a calibration test on a viscometer using a standard calibration fluid</li>
+                    <li><a href="discussion.html#calibration" target="_blank">Click here to open the guidance page for more information on calibration tests</a></li>
+                    <li>Enter your run-times and viscometer constant in the labelled boxes</li>
+                    <li>Enter the viscosity of the calibration fluid that was used into the labelled box</li>
+                    <li>Press <span class="mimic-button">calculate</span> and the tool will calculate and display the: </li>
+                    <li>
+                        <ul>
+                            <li>average run time</li>
+                            <li>your observed viscosity</li>
+                            <li>the tolerance band and associated viscosity range</li>
+                            <li>the percentage difference between the viscosity of the calibration fluid and the observed viscosity</li>
+                            <li>a message indicating whether or not the percentage difference is small enough that the viscometer passes its calibration check</li>
+                        </ul>
+                    </li>
+                    
+                    <li>Click the <span class="mimic-button">reset</span> button to clear the inputs and outputs and ready the tool to check another calibration test</li>
+                </ol>
+
+            </div>
+
+            <div id="calibration-user-input" class="user-input">
+
+                <div class="user-input-div">
+
+                    <label for="calibration-run-time-1">Run Time 1:</label>
+                    <input type="number" id="calibration-run-time-1" min="200" max="900"><span class="input-unit" id="calibration-run-time-1-units">seconds</span>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <label for="calibration-run-time-2">Run Time 2:</label>
+                    <input type="number" id="calibration-run-time-2" min="200" max="900"><span class="input-unit" id="calibration-run-time-2-units">seconds</span>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <label for="calibration-constant">Constant:</label>
+                    <input type="number" id="calibration-constant" min="0" max="100"><span class="input-unit" id="calibration-constant-units">mm<span class="superscript">2</span>/s<span class="superscript">-2</span></span>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <label for="calibration-fluid-viscosity">Calibration fluid viscosity:</label>
+                    <input type="number" id="calibration-fluid-viscosity"><span class="input-unit" id="calibration-fluid-viscosity-units">cSt</span>
+
+                </div>
+
+                <div class="user-input-div">
+
+                    <button id="submit-calibration">calculate</button>
+                    <button id="calibration-reset">reset</button>
+
+                </div>
+
+            </div>
+
+            <div id="calibration-calculated-output" class="calculated-output">
+
+                <div>
+                    <p>Calculation results:</p>
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="calibration-average-run-time-label" class="output-label">Average run time:</p>
+                    <span id="calibration-average-run-time"></span><span class="output-unit" id="calibration-average-run-time-units">seconds</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="calibration-average-viscosity-label" class="output-label">Average viscosity:</p>
+                    <span id="calibration-average-viscosity"></span><span class="output-unit" id="calibration-average-viscosity-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="calibration-viscosity-range-label" class="output-label">Viscosity range of calibration fluid</p>
+                    <span id="calibration-viscosity-range"></span><span class="output-unit" id="calibration-viscosity-range-units">cSt</span>
+
+                </div>
+
+                <div class="calculated-output-div">
+
+                    <p id="calibration-tolerance-band-label" class="output-label">Tolerance band</p>
+                    <span id="calibration-tolerance-band"></span>
+
+                </div>
+
+                <div class="calculated-output-div" id="calibration-output-div">
+                    <p id="calibration-percentage-difference-label" class="output-label">Percentage difference between observed viscosity and calibration fluid viscosity:</p>
+                    <span id="calibration-percentage-difference"></span><span class="output-unit" id="calibration-percentage-difference-units">%</span>
+                    <p id="calibration-output"></p>
+
+                </div>
+
+                <button id="calibration-details-button">Calculation details</button>
+
+                <div class="calculated-output-div" id="calibration-details"></div>
+
+            </div>
+
+        </article>
+
+        <br class="line-break">
+
+        <article id="viscometer-constant-recalibration" class="hide">
+
+            <h2 class="heading">Viscometer recalibration</h2>
+
+            <div class="description">
+
+                <h3 class="heading">Instructions for use</h3>
+
+                <ol>
+                    <li>Determine acceleration due to gravity at your laboratory's location</li>
+                    <li>Determine the acceleration due to gravity at the standardization laboratory's location</li>
+                    <li><a href="discussion.html#recalibration" target="_blank">Click here to open the guidance page for more information on viscometer recalibration</a></li>
+                    <li>Input the constant of the viscometer you wish to recalibrate</li>
+                    <li>Input these two values into the labelled boxes</li>
+                    <li>Press <span class="mimic-button">calculate</span>and the tool with provide the percentage difference</li>
+                    <li>If the percentage difference is greater than 0.1%, the tool will then provide a new constant for the viscometer</li>
+                    <li>Click the <span class="mimic-button">reset</span> button to clear the inputs and outputs and ready the tool to recalibrate another viscometer</li>
+                </ol>
+
+            </div>
+
+            <div id="recalibration-user-input" class="user-input">
+
+                <div class="user-input-div">
+                    <label for="recalibration-constant">Viscometer constant:</label>
+                    <input type="number" id="recalibration-constant"><span class="input-unit" id="recalibration-constant-units">mm<span class="superscript">2</span>/s<span class="superscript">-2</span></span>
+                </div>
+
+                <div class="user-input-div">
+                    <label for="testing-lab-gravity">Acceleration due to gravity at your laboratory's location:</label>
+                    <input type="number" id="testing-lab-gravity"><span class="input-unit">m/s</span><span class="superscript">2</span>
+                </div>
+
+                <div class="user-input-div">
+                    <label for="standardisation-lab-gravity">Acceleration due to gravity at the standardisation laboratory's location:</label>
+                    <input type="number" id="standardisation-lab-gravity"><span class="input-unit">m/s</span><span class="superscript">2</span>
+                </div>
+
+                <div class="user-input-div">
+                    <button id="submit-recalibration">calculate</button>
+                    <button id="recalibration-reset">reset</button>
+                </div>
+
+            </div>
+
+            <div id="recalibration-calculated-output" class="calculated-output">
+
+                <div class="calculated-out-div">
+                    <p>Calculation results:</p>
+                </div>
+
+                <div class="calculated-output-div">
+                    <p id="recalibration-percentage-difference-label" class="output-label">Percentage difference:</p>
+                    <span id="recalibration-percentage-difference"></span><span class="output-unit" id="recalibration-percentage-difference-units">%</span>
+                </div>
+
+                <div class="calculated-output-div">
+                    <p id="recalibration-new-constant-label" class="output-label">New constant:</p>
+                    <span id="recalibration-new-constant"></span><span class="output-unit" id="recalibration-new-constant-units">mm<span class="superscript">2</span>/s<span class="superscript">-2</span></span>
+                </div>
+            
+            </div>
+
+        </article>
+
+    </main>
+
+    <script src="assets/js/scripts-calculation-selector.js"></script>
+    <script src="assets/js/scripts-determinability.js"></script>
+    <script src="assets/js/scripts-repeatability.js"></script>
+    <script src="assets/js/scripts-reproducibility.js"></script>
+    <script src="assets/js/scripts-calibration.js"></script>
+    <script src="assets/js/scripts-recalibration.js"></script>
+    <script src="https://kit.fontawesome.com/bb77ddf0c5.js" crossorigin="anonymous"></script>
+</body>
+</html>

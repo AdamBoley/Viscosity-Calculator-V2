@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    background-color: lightblue;
+    overflow: auto;
+    position: relative;
+}
+
+.heading {
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+main {
+    min-height: 100vh
+}
+
+#calculation-selector-div {
+    margin: 0 auto;
+    width: 244px;
+}
+
+.unhide {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.line-break {
+    clear: both;
+}
+
+.calculation-article section {
+    background-color: lightblue
+}
+
+.description {
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+.description h3 {
+    text-align: center;
+}
+
+.description ol li {
+    margin-top: 5px;
+}
+
+#determinability-select {
+    height: 200px;
+}
+
+.select {
+    height: 100px;
+}
+
+#determinability-input-2 {
+    margin-left: 25px;
+}
+
+#determinability-input-1, #determinability-input-2 {
+    display: none;
+}
+
+#submit-div {
+    margin-top: 50px;
+}
+
+#reset-determinability {
+    margin-top: 10px;
+}
+
+#constant-div, #constant-1-div, #constant-2-div, #submit-ubbelohde, #submit-zeitfuchs, #reset-determinability {
+    display: none;
+}
+
+#determinability-details, #repeatability-details, #reproducibility-details, #calibration-details, #recalibration-details {
+    display: none;
+    height: 400px;
+}
+
+#determinability-details-button, #repeatability-details-button, #reproducibility-details-button, #calibration-details-button, #recalibration-details-button {
+    display: none;
+}
+
+#calibration-details-button {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.user-input-div {
+    margin-top: 25px;
+}
+
+.user-input {
+    width: 20%;
+    float: left;
+    margin-left: 500px;
+}
+
+.calculated-output {
+    width: 45%;
+    float: right;
+    margin-top: 10px;
+    min-height: 70vh;
+}
+
+.calculated-output-div span {
+    font-weight: 600;
+}
+
+#recalibration-calculated-output {
+    min-height: 40vh;
+}
+
+.calculated-output-div {
+    height: 80px;
+    width: 60%;
+}
+
+.calculated-output button {
+    margin-top: 20px;
+}
+
+.input-unit {
+    margin-left: 3px;
+}
+
+.output-label {
+    display: none;
+}
+
+.output-unit {
+    display: none;
+    margin-left: 3px;
+}
+
+.superscript {
+    vertical-align: super;
+    font-size: x-small;
+}
+
+#calibration-output-div {
+    height: 170px;
+}
+
+button {
+    background-color: white;
+    color: black;
+    width: 150px;
+    height: 25px;
+}
+
+button:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+.mimic-button {
+    background-color: white;
+    margin: 0em;;
+    color: black;
+    width: 150px;
+    height: 25px;
+    border-style: outset;
+    border-width: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.3333px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 3px;
+}
+
+/*Style rules to remove the arrows from the number inputs*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#determinability-calculations {
+    margin-top: 100px;
+}
+
+#repeatability-calculations {
+    margin-top: 81px;
+}
+
+#reproducibility-calculations {
+    margin-top: 62px;
+}
+
+#viscometer-calibration {
+    margin-top: 43px;
+}
+
+#viscometer-constant-recalibration {
+    margin-top: 24px;
+}
+
+/*discussion page style rules*/
+
+#discussion-main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+nav ul li {
+    margin: 3px 0;
+}
+
+#discussion-main article p a {
+    text-decoration: none;
+    color: black;
+}
+
+#discussion-main article p a:hover {
+    text-decoration: underline;
+}
+
+/*Media queries*/
+
+@media screen and (max-width: 1540px) {
+    .user-input {
+        width: 25%;
+        margin-left: 400px;
+    }
+}
+    
+@media screen and (max-width: 1350px) {
+    .calculated-output button {
+        margin-top: 40px;
+    }
+
+    .user-input {
+        width: 30%;
+        margin-left: 300px;
+    }
+}
+
+@media screen and (max-width: 1205px) {
+    body {
+        font-size: larger;
+    }
+
+    .user-input {
+        width: 40%;
+        margin-left: 200px;
+    }
+
+    .calculated-output {
+        width: 40%;
+    }
+
+    #determinability-select {
+        height: 300px;
+    }
+
+    select {
+        height: 50px;
+    }
+
+    input {
+        height: 20px;
+        width: 60px;
+        font-size: 16px;
+    }
+
+    button {
+        height: 50px;
+        width: 180px;
+        font-size: 16px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .calculated-output-div {
+        height: 100px;
+    }
+
+    .mimic-button {
+        height: 50px;
+        width: 180px;
+        font-size: 16px;
+        vertical-align: middle;
+        padding-top: 15px;
+    }
+
+    .calculated-output button {
+        margin-top: 60px;
+    }
+    #repeatability-details-button {
+        margin-top: 40px;
+    }
+
+    #reproducibility-details-button {
+        margin-top: 40px;
+    }
+
+    #calibration-output-div {
+        width: 68%;
+    }
+    
+    #calibration-details-button {
+        margin-top: 130px;
+    }
+}
+
+@media  screen and (max-width: 1000px) {
+    .user-input, .calculated-output {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-left: 35vw;
+    }
+
+    .calculated-output {
+        margin-top: 50px;
+    }
+    
+    .description {
+        width: 100%;
+    }
+
+    #calibration-details-button {
+        margin-top: 60px;
+    }
+}
+
+@media  screen and (max-width: 750px) {
+    .user-input, .calculated-output {
+        margin-left: 30vw;
+    }
+
+    header {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media  screen and (max-width: 600px) {
+    .user-input, .calculated-output {
+        margin-left: 25vw;
+    }
+    #calibration-output-div {
+        height: 240px;
+    }
+}
+
+@media  screen and (max-width: 500px) {
+    .user-input, .calculated-output {
+        margin-left: 15vw;
+    }
+
+    .calculated-output-div {
+        height: 120px;
+    }
+}
+
+@media  screen and (max-width: 400px) {
+    .user-input, .calculated-output {
+        margin-left: 10vw;
+    }
+
+    #calibration-details-button {
+        margin-top: 140px;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .user-input-div button {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #determinability-select {
+        height: 250px;
+    }
+
+    #determinability-input-1, #constant-div {
+        margin-left: 25px;
+    }
+
+    .calculated-output-div {
+        width: 90%;
+    }
+
+    #calibration-details-button {
+        margin-top: 100px;
+    }
+    #calibration-output-div {
+        height: 270px;
+    }
+}
+
+
+
+@media screen and (max-width: 660px) {
+    #reproducibility-details-button {
+        margin-top: 100px;
+    }
+}
