@@ -31,6 +31,90 @@ So, the objectives for this project are:
 
 Below are the steps used to add Django to this project
 
+### Set up Django:
+
+- Install Django V3 and Gunicorn web server:
+    - `pip3 install 'django<4' gunicorn`
+
+- Install PostgreSQL libraries:
+    - `pip3 install dj_database_url psycopg2`
+
+- Install Cloudinary library, to store JS and CSS files:
+    - `pip3 install dj3-cloudinary-storage`
+
+- Create requirements.txt file:
+    - `pip3 freeze --local > requirements.txt`
+    - Or
+    - `pip3 freeze -l > requirements.txt`
+
+- Create new Django project:
+    - `django-admin startproject viscosity_calculator_v2 .`
+
+- Check Django is installed and that project was started properly:
+    - `python3 manage.py runserver`
+
+- End development server with CTRL+C
+
+- Create a Django app to hold views, models, etc:
+    - `python3 manage.py startapp calculator`
+
+- Add 'calculator' to INSTALLED_APPS in settings.py
+
+- Make database migrations:
+    - `python3 manage.py showmigrations` to show migrations that will be made
+    - `python3 manage.py migrate` to commence migrations
+
+- Create Heroku app, connect to Github repository
+
+- Create Cloudinary account, or sign in to extant account
+
+- Create ElephantSQL database instance
+
+- In Heroku app settings, create Config Vars:
+    - CLOUDINARY_URL, assign value of API environment variable for Cloudinary account
+    - DATABASE_URL, assign value of ElephantSQL postgres database instance
+    - PORT, assign value of 8000
+    - SECRET_KEY, assign any value, it acts like a password to connect the heroku app with the repository/workspace
+
+- Create `env.py` file in workspace, add to `.gitignore' file if necessary
+
+- In `env.py`:
+    - import os module
+    - create 3 environment variables:
+        - os.environ["DATABASE_URL"]
+        - os.environ["SECRET_KEY"]
+        - os.environ["CLOUDINARY_URL"]
+    - assign each environment variable a value:
+        - DATABASE_URL is the URL of the ElephantSQL postgres database instance
+        - SECRET_KEY is the same as the SECRET_KEY variable in the Heroku app settings
+        - CLOUDINARY_URL is the API environment variable for your Cloudinary account
+
+- In settings.py:
+    - import os module
+    - import dj_database_url module
+    - add `if os.path.isfile('env.py'): import env`
+    - replace value of DATABASES dictionary with `'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))`
+    - add `TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')` under BASE_DIR
+    - replace value of SECRET_KEY with `os.environ.get("SECRET_KEY")`
+    - add `SITE_ID = 1`
+
+- Migrate again:
+    - `python3 manage.py showmigrations`
+    - `python3 manage.py migrate`
+
+- Check ElephantSQL instance to see if migrations have completed properly:
+    - Go to Browser tab
+    - click Table queries button
+    - a number of tables should appear, indicating that the database is wired up properly
+
+- Run `python3 manage.py runserver` again to check that app is still working
+
+- Django should now be set up, and we can move on to creating models, views, templates etc
+
+### Models
+
+We can now create the models that will be created in the database. 
+
 ## Notes
 
 `python3 -m http.server` to run a development server if no Django
