@@ -1,4 +1,4 @@
-![main page screenshot](assets/images/screenshots/main-page-screen-shot.PNG)
+![main page screenshot](/images/screenshots/main-page-screen-shot.PNG)
 
 # **Viscosity Calculator**
 
@@ -90,13 +90,13 @@ Both of these methods state that kinematic viscosity is to be measured by a mean
 
 An Ubbelohde viscometer looks like this:
 
-![Ubbelohde viscometer](assets/images/viscometers/ubbelohde-viscometer.jpg)
+![Ubbelohde viscometer](images/viscometers/ubbelohde-viscometer.jpg)
 
 The Zeitfuchs cross-arm type consists of the same features, except that the reservoir sits above the bulb, and the fluid is drawn forwards by vacuum through the capillary. When the fluid passes the first timing mark, a timer is started and when the fluid passes the second mark, it is stopped. Whereas a fluid in the Ubbelohde type can be tested repeatedly, the Zeitfuchs type is a 'one-shot' viscometer, though this makes it useful for extremely dark fluids such as crude oils that would obscure the timing marks on an Ubbelohde viscometer. 
 
 A Zeitfuchs viscometer looks like this:
 
-![Zeitfuchs viscometer](assets/images/viscometers/zeitfuchs-cross-arm-viscometer.jpg)
+![Zeitfuchs viscometer](images/viscometers/zeitfuchs-cross-arm-viscometer.jpg)
 
 The time elapsed between when the fluid passes the first timing mark to when it passes the second timing mark is referred to variously - run-time is the most common, but drop-time and determination are also used. The methods specify that only run-times of between 200 and 900 seconds are valid - 200 because less than this means that the fluid is draining too fast for the scientist to start and stop the timer, and 900 seconds because spending more than 15 minutes to acquire a run-time is inefficient, and indicates that a larger viscometer may be safely used. 
 
@@ -162,19 +162,19 @@ The tool must have a clear final output informing the user of the result of the 
 ### **Desktop**
 
 Main page - suspended flow:<br>
-![Index - suspended flow](assets/images/wireframes/initial/index-suspended-flow.png)
+![Index - suspended flow](images/wireframes/initial/index-suspended-flow.png)
 <br>
 Since this is more of a tool than a website, I thought that the input form and calculations were best placed directly on the index page, rather than on a dedicated page that required internal navigation 
 <br>
 <br>
 Main page - reverse flow:<br>
-![Index - reverse flow](assets/images/wireframes/initial/index-reverse-flow.png)
+![Index - reverse flow](images/wireframes/initial/index-reverse-flow.png)
 <br>
 This is how the tool will appear if the selector is set to a Zeitfuchs cross-arm viscometer test, with two run-time inputs and two constant inputs
 <br>
 <br>
 Discussion page:<br>
-![Discussion](assets/images/wireframes/initial/discussion.png)
+![Discussion](images/wireframes/initial/discussion.png)
 <br>
 This is the discussion page that guides the user on how to set the selector to the correct option based on their sample type
 <br>
@@ -182,21 +182,21 @@ This is the discussion page that guides the user on how to set the selector to t
 ### **martphone**
 
 Main page - suspended flow:<br>
-![Index - suspended flow](assets/images/wireframes/initial/index-suspended-flow-mobile.png)
+![Index - suspended flow](images/wireframes/initial/index-suspended-flow-mobile.png)
 <br>
 The index page as it designed to look on a smartphone
 <br>
 <br>
 Main page - reverse flow:<br>
 
-![Index - reverse flow](assets/images/wireframes/initial/index-reverse-flow-mobile.png)
+![Index - reverse flow](images/wireframes/initial/index-reverse-flow-mobile.png)
 <br>
 This is how the tool will appear if the selector is set to a Zeitfuchs cross-arm viscometer test, with two run-time inputs and two constant inputs
 <br>
 <br>
 Discussion page:<br>
 
-![Discussion](assets/images/wireframes/initial/discussion-mobile.png)
+![Discussion](images/wireframes/initial/discussion-mobile.png)
 <br>
 This is the discussion page that guides the user on how to set the selector to the correct option based on their sample type
 <br>
@@ -209,29 +209,29 @@ The project's design underwent only minimal changes over its development, with t
 
 Main page - suspended flow:<br>
 
-![index-suspended-flow-final](assets/images/wireframes/final/index-suspended-flow-final.png)
+![index-suspended-flow-final](images/wireframes/final/index-suspended-flow-final.png)
 
 Main page - reverse flow:<br>
 
-![index-reverse-flow-final](assets/images/wireframes/final/index-reverse-flow-final.png)
+![index-reverse-flow-final](images/wireframes/final/index-reverse-flow-final.png)
 
 Discussion page:<br>
 
-![discission-final](assets/images/wireframes/final/discussion-final.png)
+![discission-final](images/wireframes/final/discussion-final.png)
 
 ### **Smartphone**
 
 Main page - suspended flow:<br>
 
-![index-suspended-flow-mobile-final](assets/images/wireframes/final/index-suspended-flow-mobile-final.png)
+![index-suspended-flow-mobile-final](images/wireframes/final/index-suspended-flow-mobile-final.png)
 
 Main page - reverse flow:<br>
 
-![index-reverse-flow-mobile-final](assets/images/wireframes/final/index-reverse-flow-mobile-final.png)
+![index-reverse-flow-mobile-final](images/wireframes/final/index-reverse-flow-mobile-final.png)
 
 Discussion page:<br>
 
-![discussion-mobile-final](assets/images/wireframes/final/discussion-mobile-final.png)
+![discussion-mobile-final](images/wireframes/final/discussion-mobile-final.png)
 
 # **Features**
 
@@ -241,7 +241,7 @@ The first feature of the Viscosity Calculator is the header, which contains some
 
 See below for a screenshot of the introductory text and drop-down menu:
 
-![introductory text and drop-down menu](assets/images/screenshots/introductory-text-screenshot.PNG)
+![introductory text and drop-down menu](images/screenshots/introductory-text-screenshot.PNG)
 
 ## **Calculation articles**
 
@@ -265,7 +265,7 @@ The third feature is the calculation button, with an event listener in the scrip
 
 See below for a screenshot of the determinability calculation article:
 
-![determinability calculation article](assets/images/screenshots/determinability-screenshot.PNG)
+![determinability calculation article](images/screenshots/determinability-screenshot.PNG)
 
 ## **Repeatability and Reproducibility Calculation article**
 
@@ -277,9 +277,9 @@ The second feature is a pair of inputs for the user's viscosities. The third fea
 
 See below for screenshots of the repeatability and reproducibility calculation articles:
 
-![repeatability calculation article](assets/images/screenshots/repeatability-screenshot.PNG)
+![repeatability calculation article](images/screenshots/repeatability-screenshot.PNG)
 
-![reproducibility calculation article](assets/images/screenshots/reproducibility-screenshot.PNG)
+![reproducibility calculation article](images/screenshots/reproducibility-screenshot.PNG)
 
 ## **Calibration Calculation article**
 
@@ -289,7 +289,7 @@ This article features two run-time inputs, the constant of the viscometer, and t
 
 See below for a screenshot:
 
-![calibration article screenshot](assets/images/screenshots/calibration-screenshot.PNG)
+![calibration article screenshot](images/screenshots/calibration-screenshot.PNG)
 
 ## **Recalibration Calculation article**
 
@@ -299,7 +299,7 @@ This article features an input for the constant of the viscometer, and two input
 
 See below for a screenshot:
 
-![recalibration calculation article](assets/images/screenshots/recalibration-screenshot.PNG)
+![recalibration calculation article](images/screenshots/recalibration-screenshot.PNG)
 
 ## Calculation details 
 
@@ -307,7 +307,7 @@ The determinability, repeatability, reproducibility and calibration calculation 
 
 See below for a screenshot:
 
-![calculation details](assets/images/screenshots/calculation-details-screenshot.PNG)
+![calculation details](images/screenshots/calculation-details-screenshot.PNG)
 
 # **Function**
 
@@ -361,7 +361,7 @@ The user may then click the reset button, which is tied to an event listener. Wh
 
 ### **Determinabilty logic flow chart**
 
-![determinability logic flow chart](assets/images/flow-charts/determinability-flow-chart.drawio.png)
+![determinability logic flow chart](images/flow-charts/determinability-flow-chart.drawio.png)
 
 ## **Repeatability logic**
 
@@ -393,7 +393,7 @@ The user may then click the reset button, which is tied to an event listener. Wh
 
 ### **Repeatability logic flow chart**
 
-![Repeatability logic flow chart](assets/images/flow-charts/repeatability-flow-chart.drawio.png)
+![Repeatability logic flow chart](images/flow-charts/repeatability-flow-chart.drawio.png)
 
 ## **Reproducibility logic**
 
@@ -425,7 +425,7 @@ The user may then click the reset button, which is tied to an event listener. Wh
 
 ### **Reproducibility logic flow chart**
 
-![Reproducibility logic flow chart](assets/images/flow-charts/reproducibility-flow-chart.drawio.png)
+![Reproducibility logic flow chart](images/flow-charts/reproducibility-flow-chart.drawio.png)
 
 ## **Calibration logic**
 
@@ -455,7 +455,7 @@ The reset button is tied to a click event listener that invokes the calibrationR
 
 ### **Calibration logic flow chart**
 
-![Calibration logic flow chart](assets/images/flow-charts/calibration-flow-chart.drawio.png)
+![Calibration logic flow chart](images/flow-charts/calibration-flow-chart.drawio.png)
 
 ## **Recalibration logic**
 
@@ -471,7 +471,7 @@ The user can then click a reset button, which is tied to a click event listener.
 
 ### **Recalibration logic flow chart** 
 
-![Recalibration logic flow chart](assets/images/flow-charts/recalibration-flow-chart.drawio.png)
+![Recalibration logic flow chart](images/flow-charts/recalibration-flow-chart.drawio.png)
 
 # **Design Choices**
 
@@ -495,73 +495,73 @@ The favicon used for this project is an orange calculator. As the Viscosity Calc
 
 ## **JS functions**
 
-As noted elsewhere in this document, the calculations performed by the Viscosity Calculator are not particularly complex - mostly simple multiplication, division, addition and subtraction, with some rather more complex exponent calculations as well, though all of these are conducted with often very long floating point numbers. These calculations are also not particularly long either. 
+As noted elsewhere in this document, the calculations performed by the Viscosity Calculator are not particularly complex - mostly simple multiplication, division, addition and subtraction, with some rather more complex exponent calculations as well, though all of these are conducted with often very long floating point numbers. These calculations are also not particularly long either.
 
-Given this, it would have been possible to use a single large function for each calculation article. However, I chose to write a single function for each stage of each calculation. Broadly speaking, each function handles a single mathematical operation - the calculation of a viscosity, the calculation of a percentage difference, etc. My justification for this approach is two-fold. 
+Given this, it would have been possible to use a single large function for each calculation article. However, I chose to write a single function for each stage of each calculation. Broadly speaking, each function handles a single mathematical operation - the calculation of a viscosity, the calculation of a percentage difference, etc. My justification for this approach is two-fold.
 
-Firstly, this makes the functions far easier to read and understand, as each is short and has a name that clearly indicates its purpose. Any developer would understand that the getValuesUbbbelohde function is supposed to retrieve values from a location. This will be crucial if I decide to come back to this project and improve upon it (see the Future Work section). 
+Firstly, this makes the functions far easier to read and understand, as each is short and has a name that clearly indicates its purpose. Any developer would understand that the getValuesUbbbelohde function is supposed to retrieve values from a location. This will be crucial if I decide to come back to this project and improve upon it (see the Future Work section).
 
 Secondly, smaller functions make it far easier to maintain the functions. If the structure of the HTML document undergoes significant changes, then I should only need to find and update a handful of small functions. Provided that the outputs of those functions remain the same, the functions that follow should continue to execute as normal. In addition, it is worth noting that the functions that contain SWITCH statements contain equations taken directly from my copy of ASTM standard test method D445. These equations were generated from statistical analyses conducted by technical committees. It is not impossible for the appropriate technical committees to conduct further such statistical analyses and from these generate new equations, which would then be issued in revisions to D445. Should this happen, only the functions using those SWITCH statements would need to be found and updated with the new equations.
 
-Through the functions, I have made extensive use of the toPrecision(4) method. This is used to round the outputs of the calculations to 4 significant figures before inserting them into the document. This is because D445 specifies that results are to be reported to 4 significant figures. In addition, viscometer constants that are calculated by standardisation laboratories are given to 4 significant figures, from the smallest viscometers (e.g 0.002879) to the largest (e.g 30.60). It is also common practice for scientists to round their calculation results to 4 significant figures incrementally, to save having to write out long decimal numbers. In this way, the outputs of the Viscosity Calculator should match the outputs of manual calculations, which should serve to reassure users that the tool is performing the calculations accurately and using the correct equations.  
+Through the functions, I have made extensive use of the toPrecision(4) method. This is used to round the outputs of the calculations to 4 significant figures before inserting them into the document. This is because D445 specifies that results are to be reported to 4 significant figures. In addition, viscometer constants that are calculated by standardisation laboratories are given to 4 significant figures, from the smallest viscometers (e.g 0.002879) to the largest (e.g 30.60). It is also common practice for scientists to round their calculation results to 4 significant figures incrementally, to save having to write out long decimal numbers. In this way, the outputs of the Viscosity Calculator should match the outputs of manual calculations, which should serve to reassure users that the tool is performing the calculations accurately and using the correct equations.
 
-That said, the Viscosity Calculator functions are written in such a way that the unrounded values generated in earlier calculation functions are passed through to later functions. This is perhaps most evident in the determinability calculations, which calculate two kinematic viscosities early on, pass them through the functions and then make use of them in the final checker function. I chose to do this because the tool, being a computer, can easily store long floating point numbers in its memory. The use of the unrounded values also improves accuracy, since it eliminates errors incurred through incremental rounding. 
+That said, the Viscosity Calculator functions are written in such a way that the unrounded values generated in earlier calculation functions are passed through to later functions. This is perhaps most evident in the determinability calculations, which calculate two kinematic viscosities early on, pass them through the functions and then make use of them in the final checker function. I chose to do this because the tool, being a computer, can easily store long floating point numbers in its memory. The use of the unrounded values also improves accuracy, since it eliminates errors incurred through incremental rounding.
 
 # **Development process**
 
-When the project was started, I set out only to implement functionality to calculate determinability. When this proved unexpectedly easy to implement, I realised that it would also be easy to implement functionality to calculate repeatability, reproducibility, calibration and recalibration. This move may be seen in the wireframes, where I titled to tool 'Viscosity Determinability Calculator' in the initial wireframes. 
+When the project was started, I set out only to implement functionality to calculate determinability. When this proved unexpectedly easy to implement, I realised that it would also be easy to implement functionality to calculate repeatability, reproducibility, calibration and recalibration. This move may be seen in the wireframes, where I titled to tool 'Viscosity Determinability Calculator' in the initial wireframes.
 
 Initially, for each of the determinability, repeatability and reproducibility calculations, two large IF/ELSE statements in separate functions were used to perform those calculations. The first function displayed the calculation that was to be used to the user. The second function performed the calculations and inserted the results into HTML elements. Further functions to calculate the upper and lower limits would take their input values from the HTML elements, perform the calculations and post the results. I realised that this could lead to calculation errors, since I was rounding with the toPrecision method each time the functions retrieved and posted the numbers. This was caused by the inability of IF/ELSE statements to declare or modify variables outside of the statements. I refactored the code, and replaced the two large IF/ELSE functions with a single large SWITCH statement, which allowed me to declare and modify variables which can then be passed directly into further functions. This prevents calculation rounding errors, and generally simplifies the code.
 
 When I gained experience working with SWITCH statements, I implemented one for the calibration calculations from the get go.
 
-When initially written the JavaScript code contained many console.log statements, which used template literals to log various values to the console. The idea was to use these not just for development and testing, but also to leave them in the code for the benefit of the user. In this scenario, the user could open the console to see the calculation process and see the unrounded values. However, my mentor informed me that this is not an industry standard approach, and instead suggested an approach whereby the unrounded calculation outputs would be inserted into a details section. This led to the creation of a hidden calculation details element, which could be made visible by clicking a button, that button also being initially hidden and being made visible when the final calculation function finished.  
+When initially written the JavaScript code contained many console.log statements, which used template literals to log various values to the console. The idea was to use these not just for development and testing, but also to leave them in the code for the benefit of the user. In this scenario, the user could open the console to see the calculation process and see the unrounded values. However, my mentor informed me that this is not an industry standard approach, and instead suggested an approach whereby the unrounded calculation outputs would be inserted into a details section. This led to the creation of a hidden calculation details element, which could be made visible by clicking a button, that button also being initially hidden and being made visible when the final calculation function finished.
 
 # **Accessibility**
 
-In contrast to my previous project, which contained a great many images, this project contains none. Therefore, there is no need for accessibility attributes such as aria-label or aria-labelledby. 
+In contrast to my previous project, which contained a great many images, this project contains none. Therefore, there is no need for accessibility attributes such as aria-label or aria-labelledby.
 
-However, the Viscosity Calculator has been constructed with visually impaired users in mind. 
+However, the Viscosity Calculator has been constructed with visually impaired users in mind.
 
-Firstly, the background color is light blue (hex-code: #add8e6), whilst the text colour is black. [The WebAIM color contrast checker](https://webaim.org/resources/contrastchecker/) was used to check that contrast between light-blue and black, and this colour combination passes all tests. 
+Firstly, the background color is light blue (hex-code: #add8e6), whilst the text colour is black. [The WebAIM color contrast checker](https://webaim.org/resources/contrastchecker/) was used to check that contrast between light-blue and black, and this colour combination passes all tests.
 
-Secondly, I have increased the font-weight of the calculation outputs to 600, which makes them visually distinct from their labels. 
+Secondly, I have increased the font-weight of the calculation outputs to 600, which makes them visually distinct from their labels.
 
 Thirdly, I have implemented media queries that increase the size of the Viscosity Calculator's buttons, drop-down menus and input elements when it is viewed on tablets and smartphones. The font-size has also been increased from 16px to 19.2px. The buttons specifically have also been given CSS hover pseudo-selectors so that they take on a dark blue colour with white text when a user's mouse hovers over them, to clearly indicate that the user is about to click a button and intiate some action.
 
 See below for a screenshot of the project on multiple devices, obtained from [Am I Responsive](http://ami.responsivedesign.is/#):
 
-![am i responsive screenshot](assets/images/screenshots/am-i-responsive-screenshot.PNG)
+![am i responsive screenshot](/images/screenshots/am-i-responsive-screenshot.PNG)
 
 # **Future work**
 
-This project has great scope for future work. 
+This project has great scope for future work.
 
 Firstly, a function could be added that exports all of the inputted and calulated data to an Excel spreadsheet so that permanent electronic records can be kept.
 
-Secondly, a database of sorts could be added that stores all viscometer serial numbers and constants. Serial numbers are simple and unique, whilst constants can be more difficult to remember. The user could, instead of entering a constant, merely select the serial number of the viscometer they used and the tool would populate the cell with the constant for use in the calculations. This would tie in with the above. 
+Secondly, a database of sorts could be added that stores all viscometer serial numbers and constants. Serial numbers are simple and unique, whilst constants can be more difficult to remember. The user could, instead of entering a constant, merely select the serial number of the viscometer they used and the tool would populate the cell with the constant for use in the calculations. This would tie in with the above.
 
-The tool could be expanded greatly to handle the calculations involved in other industry standard test methods that require extensive calculations. 
+The tool could be expanded greatly to handle the calculations involved in other industry standard test methods that require extensive calculations.
 
 # **Bugs**
 
 A large and annoying bug was encountered when trying to change the text displayed in the "determinability-equation" div and when performing the calculation in the "determinability-factor" div. This text and equation output change was governed by the user's selection from the drop-down menu. It was observed through console.log commands that the code was not using the loop's IF/ELSE statements to discriminate based on the drop-down menu selection, but was actually trying to execute all of the options. I was using the onchange event listener in the select element, but it only seemed to be firing once. This was eventually solved with help from Tutor Support, who recommended removing the loop. The reasoning for initially using a loop was that the Love Maths walkthrough project involves the use of loop to respond to the user's mathematical operation selection. As noted elsewhere, I eventually moved away from IF/ELSE statements and used SWITCH statements, but solving this bug allowed the project to progress. 
 
-A bug was noticed during routine testing after adding JavaScript and HTML to unhide units when performing the calculations, and then hide the units again when the reset button is pressed. This bug related to the calibration and recalibration calculations, which use percentage difference calculations operation as part of the functions. The functions appeared to be concatenating the input values as strings, which produced wildly inaccurate output values. This was solved by tweaking the variables used to calculate the denominator in the percentage difference calculations. Instead of adding the two values and then dividing by 2, as in: 
+A bug was noticed during routine testing after adding JavaScript and HTML to unhide units when performing the calculations, and then hide the units again when the reset button is pressed. This bug related to the calibration and recalibration calculations, which use percentage difference calculations operation as part of the functions. The functions appeared to be concatenating the input values as strings, which produced wildly inaccurate output values. This was solved by tweaking the variables used to calculate the denominator in the percentage difference calculations. Instead of adding the two values and then dividing by 2, as in:
 
 (value 1 + value 2) / 2
 
-The JavaScript now instead divides each value individually by 2 and then adds them, which is, mathematically speaking, the same operation, as in: 
+The JavaScript now instead divides each value individually by 2 and then adds them, which is, mathematically speaking, the same operation, as in:
 
 ((value 1 / 2) + (value 2 / 2))
 
 Dividing each value individually appears to prevent string concatenation, forcing the percentage difference calculations to calculate the correct value.
 
-Late in the development, I ran into serious problems with correctly placing the footer. On a standard PC screen, the footer was positioned with no issues. However, when writing the media queries for smartphones and tablets, the footer's position moved unpredictably when the calculation details buttons were clicked. I attempted to rectify this using some JavaScript to increase the height of certain elements and to modify the style rules of the footer that governed its position. However, these attempts did not succeed, and I eventually determined that the footer was not adding any real value to the project, so it was removed, as were all references to it in the JavaScript and the CSS. I suspect that the revealing of the calculation details elements were causing problems that could not be easily overcome. 
+Late in the development, I ran into serious problems with correctly placing the footer. On a standard PC screen, the footer was positioned with no issues. However, when writing the media queries for smartphones and tablets, the footer's position moved unpredictably when the calculation details buttons were clicked. I attempted to rectify this using some JavaScript to increase the height of certain elements and to modify the style rules of the footer that governed its position. However, these attempts did not succeed, and I eventually determined that the footer was not adding any real value to the project, so it was removed, as were all references to it in the JavaScript and the CSS. I suspect that the revealing of the calculation details elements were causing problems that could not be easily overcome.
 
 # **Technologies**
 
-[Github](https://github.com/) was used to host the project repository. The Github project board was of great help in noting down action items, especially close to the end of the project when I was updating the documentation. 
+[Github](https://github.com/) was used to host the project repository. The Github project board was of great help in noting down action items, especially close to the end of the project when I was updating the documentation.
 
 [Gitpod](https://gitpod.io/) was used to create and edit the project files. The Preview Browser proved useful in seeing the results of minor changes.
 
@@ -573,7 +573,7 @@ Late in the development, I ran into serious problems with correctly placing the 
 
 [Font Awesome](https://fontawesome.com/) was used to apply the check and cross icons.
 
-[The ASTM Compass](https://compass.astm.org/) was used to obtain a copy of ASTM standard test method D445. The ASTM Compass is not accessible to users without a subscription, and I was only able to obtain the method using Intertek's global subscription. Prior to the project's submission, a copy was stored in the repository and there was a link in the discussion page that allowed a user to download a copy of the method, but upon inspection of my copy, I noticed a footer that prohibited further reproduction, so the file and download link were removed from the project.  
+[The ASTM Compass](https://compass.astm.org/) was used to obtain a copy of ASTM standard test method D445. The ASTM Compass is not accessible to users without a subscription, and I was only able to obtain the method using Intertek's global subscription. Prior to the project's submission, a copy was stored in the repository and there was a link in the discussion page that allowed a user to download a copy of the method, but upon inspection of my copy, I noticed a footer that prohibited further reproduction, so the file and download link were removed from the project.
 
 # **Deployment**
 
@@ -663,13 +663,13 @@ A preview browser can be opened by running the server. This can be done by follo
 
 My mentor suggested implementing Jest for testing the mathematical functions of the project. Following the Jest documentation, the Jest library was installed. This created the package-lock.json and package.json files. However, despite reading the documentation and watching several Jest tutorials, I was unable to figure out how to implement the testing. As the project currently stands, the package-lock and package files currently serve no purpose. 
 
-To compensate, extensive manual testing was conducted, with the outputs of the Viscosity Calculator compared to the results of manual calculations using a scientific calculator and a notepad. This is noted below. 
+To compensate, extensive manual testing was conducted, with the outputs of the Viscosity Calculator compared to the results of manual calculations using a scientific calculator and a notepad. This is noted below.
 
 ## **Testing User Stories**
 
 **First-time users must be able to determine the purpose of the tool as soon as they navigate to it** 
 
-The use of the term 'viscosity' in the index page's title, and the introductory text that mentions ASTM D445 clearly indicates the purpose of the site. 
+The use of the term 'viscosity' in the index page's title, and the introductory text that mentions ASTM D445 clearly indicates the purpose of the site.
 
 **The tool must include a selector to allow the user to choose the calculation they want to conduct**
 
@@ -1389,27 +1389,27 @@ Constant: 0.2936 <br>
 
 ### **Overall verdict** 
 
-Overall, the Viscosity Calculator appears to match the results of the manual calculations in all particulars. When the project was started, I was concerned that the base 2 mathematical system used by JavaScript to perform calculations would not cope well with calculations involving several floating-point values. This appears to have some grounding, as the Viscosity Calculator will ocassionally generate values ending in 0000001 or 9999999, though this isn't universal and depends on the inputs. This is probably similar to the unexpected result given when using a browser console to add 0.1 and 0.2, which gives 0.30000000000000004, rather than 0.3. However, these values are only visible in the calculation details section, and hence use of the toPrecision method in the regular outputs stops this happening. 
+Overall, the Viscosity Calculator appears to match the results of the manual calculations in all particulars. When the project was started, I was concerned that the base 2 mathematical system used by JavaScript to perform calculations would not cope well with calculations involving several floating-point values. This appears to have some grounding, as the Viscosity Calculator will ocassionally generate values ending in 0000001 or 9999999, though this isn't universal and depends on the inputs. This is probably similar to the unexpected result given when using a browser console to add 0.1 and 0.2, which gives 0.30000000000000004, rather than 0.3. However, these values are only visible in the calculation details section, and hence use of the toPrecision method in the regular outputs stops this happening.
 
-In addition, the tool functioned exceptionally quickly, displaying the results instantly once the calculate button was clicked. Therefore, commercial scientists should have no objections to using this tool in their work. 
+In addition, the tool functioned exceptionally quickly, displaying the results instantly once the calculate button was clicked. Therefore, commercial scientists should have no objections to using this tool in their work.
 
 ## **Testing on different devices**
 
 ### **PC**
 
-This project was developed wholly using a PC with a 1920 x 1080px monitor. Functionality and design was checked throughout development, and no issues were detected when the project was submitted. 
+This project was developed wholly using a PC with a 1920 x 1080px monitor. Functionality and design was checked throughout development, and no issues were detected when the project was submitted.
 
 ### **Smartphone**
 
-I have access to a Samsung A70 smartphone, which was used to check the layout and design when constructing the media queries for smaller screen sizes. 
+I have access to a Samsung A70 smartphone, which was used to check the layout and design when constructing the media queries for smaller screen sizes.
 
-### **aptop**
+### **Laptop**
 
-I also have access to a laptop with a 1920 x 1080px screen. No issues were detected. 
+I also have access to a laptop with a 1920 x 1080px screen. No issues were detected.
 
 ### **Tablet**
 
-I also have access to an iPad. Testing on this device detected a bug whereby the calibration details button was merging with the calibration output text. The media query for a screen-width of < 1205px was expanded to counter this. 
+I also have access to an iPad. Testing on this device detected a bug whereby the calibration details button was merging with the calibration output text. The media query for a screen-width of < 1205px was expanded to counter this.
 
 ## **Testing code**
 
@@ -1429,15 +1429,15 @@ Once these issues were cleared up, the index.html file was run through the valid
 
 The [W3C Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/) was used for validating the styles.css file of the project.
 
-**Styles.css** - No errors were detected. 5 warnings were detected - 1 relating to the imported Work Sans font (since imported style sheets are not checked) and 4 relating to the webkits used on lines 190 through 199, which disable the arrows that appear in number input elements by default. These webkits are for the Chrome, Safari, Opera, Edge and Firefox browsers. I consider removal of the arrows to be a minor quality-of-life improvement, and so users viewing the project using another browser should not be significantly impacted. 
+**Styles.css** - No errors were detected. 5 warnings were detected - 1 relating to the imported Work Sans font (since imported style sheets are not checked) and 4 relating to the webkits used on lines 190 through 199, which disable the arrows that appear in number input elements by default. These webkits are for the Chrome, Safari, Opera, Edge and Firefox browsers. I consider removal of the arrows to be a minor quality-of-life improvement, and so users viewing the project using another browser should not be significantly impacted.
 
 ### **JS validation**
 
 [JShint](https://jshint.com/) was used for JavaScript validation
 
-**scripts-determinability.js** - No errors were detected, but initially there were many warnings. Some of these related to missing semi-colons. Other warnings related to the use of the let keyword for variables, the use of template literals and the use of exponent operator. The missing semi-colons were inserted, and a second run through the validator showed only the warnings about let, template literals and the exponent operator. 
+**scripts-determinability.js** - No errors were detected, but initially there were many warnings. Some of these related to missing semi-colons. Other warnings related to the use of the let keyword for variables, the use of template literals and the use of exponent operator. The missing semi-colons were inserted, and a second run through the validator showed only the warnings about let, template literals and the exponent operator.
 
-**scripts-repeatability.js** - No errors were detected, but there were several warnings related to the use of the let keyword for variables, the use of template literals and the use of exponent operator. No warnings related to missing semi-colons were found, since these were inserted when the warnings about their absence were noted during validation of the scripts-determinability.js file. 
+**scripts-repeatability.js** - No errors were detected, but there were several warnings related to the use of the let keyword for variables, the use of template literals and the use of exponent operator. No warnings related to missing semi-colons were found, since these were inserted when the warnings about their absence were noted during validation of the scripts-determinability.js file.
 
 **scripts-reproducibility.js** - No errors were detected, but there were several warnings related to the use of the let keyword for variables, the use of template literals and the use of exponent operator. No warnings related to missing semi-colons were found, since these were inserted when the warnings about their absence were noted during validation of the scripts-determinability.js file.
 
@@ -1447,29 +1447,29 @@ The [W3C Jigsaw CSS validator](https://jigsaw.w3.org/css-validator/) was used fo
 
 **scripts-calculation-selector.js** - No errors were detected, but there was one warning relating to the use of the let keyword for variables.
 
-Since JavaScript's current version is [ECMAScript 2018](https://www.w3schools.com/js/js_2018.asp), the warnings noted above relate to JavaScript versions ES6 ad ES7, which are now 5 years old. 
+Since JavaScript's current version is [ECMAScript 2018](https://www.w3schools.com/js/js_2018.asp), the warnings noted above relate to JavaScript versions ES6 ad ES7, which are now 5 years old.
 
 ### **Lighthouse testing**
 
-The Lighthouse feature of the Chrome Developer Tools was used to generate a report on the Performance, Accessibility, Best Practices and Search Engine Optimisation of the project. Initially, Performance, Accessibility and Best Practices scored 100%. SEO scored 89%, which was due to [non-descriptive text in hyperlinks](https://web.dev/link-text/?utm_source=lighthouse&utm_medium=devtools). I had placed 'Click here' in the hyperlinks. The text inside the hyperlink was reformatted to be more descriptive. Initially I had links to the guidance page in the top-level introductory text, and in the instructions for the determinability, repeatability and reproducibility calculation articles. Lighthouse testing prompted me to place additional hyperlinks in the instructions for the calibration and recalibration calculation articles. With the hyperlink text reformatted, both pages achieved a 100% score in each Lighthouse testing category.  
+The Lighthouse feature of the Chrome Developer Tools was used to generate a report on the Performance, Accessibility, Best Practices and Search Engine Optimisation of the project. Initially, Performance, Accessibility and Best Practices scored 100%. SEO scored 89%, which was due to [non-descriptive text in hyperlinks](https://web.dev/link-text/?utm_source=lighthouse&utm_medium=devtools). I had placed 'Click here' in the hyperlinks. The text inside the hyperlink was reformatted to be more descriptive. Initially I had links to the guidance page in the top-level introductory text, and in the instructions for the determinability, repeatability and reproducibility calculation articles. Lighthouse testing prompted me to place additional hyperlinks in the instructions for the calibration and recalibration calculation articles. With the hyperlink text reformatted, both pages achieved a 100% score in each Lighthouse testing category.
 
 # **Credits**
 
 ## **Resources**
 
-[This Stack Overflow question](https://stackoverflow.com/questions/8605516/default-select-option-as-blank) provided guidance on how to set a specific option element of a drop-down menu as the default, and how to make that default option disabled.  
+[This Stack Overflow question](https://stackoverflow.com/questions/8605516/default-select-option-as-blank) provided guidance on how to set a specific option element of a drop-down menu as the default, and how to make that default option disabled.
 
-ASTM Industry standard test method D445, obtained using Intertek's subscription to the ASTM Compass, was used to provide the equations used to determinability, repeatability, reproducibility, viscometer calibration and viscometer recalibration. Unfortunately, my copy states that there is a license agreement that prevents reproduction, so a copy cannot be made available for download.  
+ASTM Industry standard test method D445, obtained using Intertek's subscription to the ASTM Compass, was used to provide the equations used to determinability, repeatability, reproducibility, viscometer calibration and viscometer recalibration. Unfortunately, my copy states that there is a license agreement that prevents reproduction, so a copy cannot be made available for download.
 
-[This W3 Schools page](https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp) provided guidance on how to disable to arrows in number input elements. 
+[This W3 Schools page](https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp) provided guidance on how to disable to arrows in number input elements.
 
-[The diagrams.net site](https://app.diagrams.net/) was used to construct flow charts to visually demonstrate how the calculation functions worked and interacted. 
+[The diagrams.net site](https://app.diagrams.net/) was used to construct flow charts to visually demonstrate how the calculation functions worked and interacted.
 
 [This MDN Web Docs page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision) provided guidance on how to use to the JavaScript toPrecision method
 
-The [Am I Responsive](http://ami.responsivedesign.is/#) site was used to generate the previews of the site as it appears on multiple devices. 
+The [Am I Responsive](http://ami.responsivedesign.is/#) site was used to generate the previews of the site as it appears on multiple devices.
 
-[The WebAIM color contrast checker](https://webaim.org/resources/contrastchecker/) was used to confirm the contrast between the light-blue background colour and the black text. 
+[The WebAIM color contrast checker](https://webaim.org/resources/contrastchecker/) was used to confirm the contrast between the light-blue background colour and the black text.
 
 The Lighthouse testing function provided [this link to a web.dev page](https://web.dev/link-text/?utm_source=lighthouse&utm_medium=devtools) that discusses non-descriptive text in hyperlinks. This was used to improve the text in the project's hyperlinks.
 
@@ -1479,7 +1479,7 @@ The image of the Zeitfuchs viscometer was obtained from [this PSL Rheotek page](
 
 ## Acknowledgements
 
-Ed Bradley from Tutor Support, who provided invaluable guidance on the conditional logic for the determinabilty calculation functions, and on how to correctly get the value of input elements. These methods were later used to construct the functions for the repeatability and reproducibility calculations. Ultimately, I moved away from the suggested approach to use SWITCH statements, but the suggested approach provided a working first draft that allowed the project to progress. 
+Ed Bradley from Tutor Support, who provided invaluable guidance on the conditional logic for the determinabilty calculation functions, and on how to correctly get the value of input elements. These methods were later used to construct the functions for the repeatability and reproducibility calculations. Ultimately, I moved away from the suggested approach to use SWITCH statements, but the suggested approach provided a working first draft that allowed the project to progress.
 
 [Ronan McLelland](https://www.linkedin.com/in/ronanmcclelland/) - my Mentor, who proved invaluable in project planning, providing resources, and guidance on general JavaScript development principles.
 
