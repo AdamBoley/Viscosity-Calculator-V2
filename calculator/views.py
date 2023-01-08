@@ -11,11 +11,12 @@ class DeterminabilitySuspendedPage(generic.ListView):
     """
     template_name = 'determinability.html'
     model = Viscometer
-    queryset = Viscometer.objects.filter(type=0).order_by('-size')
+    queryset = Viscometer.objects.filter(type=0).order_by('size')
 
     def get(self, request):
         context = {
-            "suspended": True
+            "suspended": True,
+            "object_list": DeterminabilitySuspendedPage.queryset
         }
         template_name = 'determinability.html'
         return render(request, template_name, context)
@@ -29,11 +30,12 @@ class DeterminabilityReversePage(generic.ListView):
     """
     model = Viscometer
     template_name = 'determinability.html'
-    queryset = Viscometer.objects.filter(type=1).order_by('-size')
+    queryset = Viscometer.objects.filter(type=1).order_by('size')
 
     def get(self, request):
         context = {
-            "reverse": True
+            "reverse": True,
+            "object_list": DeterminabilityReversePage.queryset
         }
         template_name = 'determinability.html'
         return render(request, template_name, context)

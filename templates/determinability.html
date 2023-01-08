@@ -12,16 +12,86 @@
 
             <li>Select your the sample type and temperature from the drop-down menu below that most closely matches the test you are checking</li>
             <li>If you are unsure what sample type to select, <a href="{% url 'discussion' %}">click here to open the guidance page</a> </li>
-            <li>Click either the <div class="mimic-button">Ubbelohde viscometer</div> button or the <div class="mimic-button">Zeitfuchs viscometers</div> button, depending on what viscometers you used</li>
+            <li>Use the drop-down menu to select the viscometer used</li>
             <li>Enter your run-times into the labelled boxes</li>
-            <li>If you used a suspended flow viscometer, enter the constant in the labelled box</li>
-            <li>If you used a pair of cross-arm viscometers, enter the constants in the labelled boxes, being sure to match them to the run-times</li>
             <li>Check your entered information and press the <span class="mimic-button">calculate</span> button</li>
             <li>The tool will calculate all of the data you need to check a viscosity test</li>
             <li>Click the <span class="mimic-button">calculation details</span> button to see the unrounded calculation values</li>
             <li>Once your have checked your data, click the <span class="mimic-button">reset</span> button to clear the inputs and outputs, and reset the tool</li>
 
         </ol>
+    </div>
+    <div class="row">
+
+        {% if suspended %}
+
+        <h3 class="text-center">Select suspended-flow viscometer</h3>
+
+        <div class="col-6">
+            <div id="run-time-1-div" class="mb-5">
+                <label for="run-time-1">Run Time 1</label>
+                <input type="number" id="run-time-1" min="200" max="900"><span class="input-unit">seconds</span>
+            </div>
+            
+            <div id="run-time-2-div" class="">
+                <label for="run-time-2">Run Time 2</label>
+                <input type="number" id="run-time-2" min="200" max="900"><span class="input-unit">seconds</span>
+            </div>
+
+        </div>
+
+        <div class="col-6">
+            <select name="" id="">
+                <option disabled selected value="disabled"> -- select a viscometer -- </option>
+                {% for viscometer in object_list %}
+                    <option value="">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        {% endif %}
+
+
+        {% if reverse %}
+
+        <h3 class="text-center">Select reverse-flow viscometers</h3>
+
+        <div class="col-6">
+            <div id="run-time-1-div" class="mb-5">
+                <label for="run-time-1">Run Time 1</label>
+                <input type="number" id="run-time-1" min="200" max="900"><span class="input-unit">seconds</span>
+            </div>
+
+            <div id="run-time-2-div" class="mb-5">
+                <label for="run-time-1">Run Time 2</label>
+                <input type="number" id="run-time-1" min="200" max="900"><span class="input-unit">seconds</span>
+            </div>            
+
+        </div>
+
+        <div class="col-6">
+            <div class="mb-5">
+                <select name="" id="">
+                    <option disabled selected value="disabled"> -- select a viscometer -- </option>
+                    {% for viscometer in object_list %}
+                        <option value="">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div>
+                <select name="" id="">
+                    <option disabled selected value="disabled"> -- select a viscometer -- </option>
+                    {% for viscometer in object_list %}
+                        <option value="">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+        </div>
+
+        {% endif %}
+
     </div>
 </div>
 
