@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views import generic
 from .models import Viscometer
 
@@ -8,9 +9,16 @@ class DeterminabilitySuspendedPage(generic.ListView):
     Uses determinability.html
     Constructs the queryset from suspended flow viscometers only
     """
-    model = Viscometer
     template_name = 'determinability.html'
+    model = Viscometer
     queryset = Viscometer.objects.filter(type=0).order_by('-size')
+
+    def get(self, request):
+        context = {
+            "suspended": True
+        }
+        template_name = 'determinability.html'
+        return render(request, template_name, context)
 
 
 class DeterminabilityReversePage(generic.ListView):
@@ -22,6 +30,13 @@ class DeterminabilityReversePage(generic.ListView):
     model = Viscometer
     template_name = 'determinability.html'
     queryset = Viscometer.objects.filter(type=1).order_by('-size')
+
+    def get(self, request):
+        context = {
+            "reverse": True
+        }
+        template_name = 'determinability.html'
+        return render(request, template_name, context)
 
 
 class RepeatabilityPage(generic.ListView):
