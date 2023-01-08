@@ -5,6 +5,7 @@ from .models import Viscometer
 @admin.register(Viscometer)
 class ViscometerAdmin(admin.ModelAdmin):
     """
+    Registration for Viscometer model in admin panel
     """
     list_filter = (
         'size',

@@ -8,7 +8,7 @@ The original project was developed to showcase the JavaScript skills learnt as p
 
 Also, as part of the original project, I attempted to make the application responsive to different screen sizes, since the scope required that the application be fully usable on a mobile device, so that scientists using the application in their laboratories could use their personal mobile devices instead of desktop or laptop computers. At the time of project submission, I thought I had achieved this, though in reality I had not. Subsequent personal testing in my laboratory at work confirmed this - some of the text overlaps with buttons. At the time of project development, I knew of Bootstrap and other front-end libraries that enable easy responsiveness to different screen sizes, but had no education in their use (I had only been coding for about 3 months at this point), so I did not use them. Another aspect of this V2 project will be to implement Bootstrap or some other front-end library to handle responsiveness.
 
-Close to the end of the original project's development, I explored automated testing with the Jest library. As I had no experience with Jest, this quickly withered and I resorted to extensive manual testing. As part of my studies, I did explore Jest, but never implemented it in my subsequent projects. Given that the original project has a great many JavaScript functions for various calculations, it is a prime candidate for more properly exploring Jest and allowing me to become more comfortable with it.
+Close to the end of the original project's development, I explored automated testing with the Jest library. As I had no experience with Jest, this quickly withered and I resorted to extensive manual testing. As part of my studies, I did explore Jest, but never implemented it in my subsequent projects. Given that the original project has a great many JavaScript functions for various calculations, it is a prime candidate for more properly exploring Jest and allowing me to become more comfortable with it. The JavaScript files that handle the main logic of the project will also be converted to use jQuery, again with the intent of more properly exploring it.
 
 So, the objectives for this project are:
 
@@ -25,6 +25,8 @@ So, the objectives for this project are:
 
 - Implement automated testing of JavaScript via Jest:
     - pass values to various functions and assert that some value is returned
+
+- Convert vanilla JS to jQuery
 
 
 ## Development
