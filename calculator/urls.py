@@ -33,4 +33,9 @@ urlpatterns = [
         views.RecalibrationPage.as_view(),
         name='recalibration'
     ),
+    path(
+        'discussion/',
+        views.DiscussionPage.as_view(),
+        name='discussion'
+    ),
 ]

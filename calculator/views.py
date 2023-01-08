@@ -39,21 +39,19 @@ class DeterminabilityReversePage(generic.ListView):
         return render(request, template_name, context)
 
 
-class RepeatabilityPage(generic.ListView):
+class RepeatabilityPage(generic.base.TemplateView):
     """
     View for rendering Repeatability page
     uses repeatability.html
     """
-    model = Viscometer
     template_name = 'repeatability.html'
 
 
-class ReproducibilityPage(generic.ListView):
+class ReproducibilityPage(generic.base.TemplateView):
     """
     View for rendering Reproducibility page
     uses reproducibility.html
     """
-    model = Viscometer
     template_name = 'reproducibility.html'
 
 
@@ -75,3 +73,11 @@ class RecalibrationPage(generic.ListView):
     model = Viscometer
     template_name = 'recalibration.html'
     queryset = Viscometer.objects.order_by('-size')
+
+
+class DiscussionPage(generic.base.TemplateView):
+    """
+    View for discussion page
+    uses.discussion.html
+    """
+    template_name = 'discussion.html'

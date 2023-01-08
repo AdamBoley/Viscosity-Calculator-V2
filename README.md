@@ -162,6 +162,54 @@ Now I must create a superuser to enable access to the admin panel:
 
 ### Views
 
+Now the views can be created
+
+- There will be 6 views:
+    - DeterminabilitySuspendedPage
+    - DeterminabilityReversePage
+    - RepeatabilityPage
+    - ReproducibilityPage
+    - CalibrationPage
+    - RecalibrationPage
+
+- The determinability pages use the same template, and both use a GET method to use a context that triggers templating language in the template file
+
+- DeterminabilitySupendedPage builds its queryset from suspended-flow viscometers
+
+- DeterminabilityReversePage builds its queryset from reverse-flow viscometers
+
+- CalibrationPage builds its queryset from all viscometers
+
+- The other views are simple, and use their respective templates
+
+### URLS
+
+Now that the views have been written, they can be registered in the urls.py file
+
+- Create a urls.py file
+
+- Register each view with a path, including a url extension, the view and a name
+
+### Templates
+
+Now the templates can be created
+
+- Create a templates directory
+
+- Create html files in that directory, with one for each page plus another called base.html
+
+- In base.html, create the head element with all the necessary link tags, meta tags, script tags and so on
+
+- In base.html, create a main element, and place block content and endblock templating language elements in it
+
+- In the other files, extend base.html and load block content
+
+- In settings.py, in TEMPLATES, find DIRS. In the square brackets, add TEMPLATES_DIR, so that Django knows to look in the templates directory for the templates
+
+- To load static files (CSS files, JS files), add `STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]` and `STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')`, as this tells Django to look in the static folder for these files
+
+- Add Bootstrap to templates in standard front-end development
+
 ## Notes
 
 `python3 -m http.server` to run a development server if no Django
