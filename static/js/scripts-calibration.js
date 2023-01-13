@@ -1,7 +1,9 @@
 //Calibration calculations
 
-let calibrationCalculateButton = document.getElementById('submit-calibration');
-calibrationCalculateButton.addEventListener('click', getValuesCalibration);
+document.addEventListener("DOMContentLoaded", function(){
+    let calibrationCalculateButton = document.getElementById('submit-calibration');
+    calibrationCalculateButton.addEventListener('click', getValuesCalibration);
+})
 
 function getValuesCalibration() {//retrieves number input values
 
@@ -141,8 +143,10 @@ function percentageDifferenceChecker(percentageDifference, toleranceBand) {//che
     calibrationDetailsButton.style.display = 'block';
 }
 
-let calibrationDetailsButton = document.getElementById('calibration-details-button');
-calibrationDetailsButton.addEventListener('click', calibrationDetails);
+document.addEventListener("DOMContentLoaded", function(){
+    let calibrationDetailsButton = document.getElementById('calibration-details-button');
+    calibrationDetailsButton.addEventListener('click', calibrationDetails);
+})
 
 function calibrationDetails() {//displays unrounded calculation values
 
@@ -164,8 +168,10 @@ function calibrationDetails() {//displays unrounded calculation values
     calibrationDetailsDiv.style.display = 'block';
 }
 
-let calibrationResetButton = document.getElementById('calibration-reset');
-calibrationResetButton.addEventListener('click', calibrationReset);
+document.addEventListener("DOMContentLoaded", function(){
+    let calibrationResetButton = document.getElementById('calibration-reset');
+    calibrationResetButton.addEventListener('click', calibrationReset);
+})
 
 function calibrationReset() {//resets calculation article for further use
 

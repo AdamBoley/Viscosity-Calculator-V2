@@ -1,7 +1,9 @@
 //Reproducibility calculation functions
 
-let reproducibilityButton = document.getElementById('submit-reproducibility');
-reproducibilityButton.addEventListener('click', averageViscosityReproducibility);
+document.addEventListener("DOMContentLoaded", function(){
+    let reproducibilityButton = document.getElementById('submit-reproducibility');
+    reproducibilityButton.addEventListener('click', averageViscosityReproducibility);
+})
 
 function averageViscosityReproducibility() {//retrives supplied viscosities, calculates average
 
@@ -192,8 +194,10 @@ function reproducibilityChecker(viscosity1, viscosity2, reproducibilityUpper, re
     reproducibilityDetailsButton.style.display = 'block';
 }
 
-let reproducibilityDetailsButton = document.getElementById('reproducibility-details-button');
-reproducibilityDetailsButton.addEventListener('click', reproducibilityDetails);
+document.addEventListener("DOMContentLoaded", function(){
+    let reproducibilityDetailsButton = document.getElementById('reproducibility-details-button');
+    reproducibilityDetailsButton.addEventListener('click', reproducibilityDetails);
+})
 
 function reproducibilityDetails() {//displays unrounded values
 

@@ -1,7 +1,9 @@
 //Viscometer constant recalibration calculations
 
-let recalibrationButton = document.getElementById('submit-recalibration');
-recalibrationButton.addEventListener('click', recalibrationPercentageDifference);
+document.addEventListener("DOMContentLoaded", function(){
+    let recalibrationButton = document.getElementById('submit-recalibration');
+    recalibrationButton.addEventListener('click', recalibrationPercentageDifference);
+})
 
 function recalibrationPercentageDifference() {
 
@@ -53,8 +55,10 @@ function recalibrationFunction(percentageDifference, testingGravity, standardisa
     }
 }
 
-let recalibrationResetButton = document.getElementById('recalibration-reset');
-recalibrationResetButton.addEventListener('click', recalibrationReset);
+document.addEventListener("DOMContentLoaded", function(){
+    let recalibrationResetButton = document.getElementById('recalibration-reset');
+    recalibrationResetButton.addEventListener('click', recalibrationReset);
+})
 
 function recalibrationReset() {
     document.getElementById('recalibration-constant').value = '';

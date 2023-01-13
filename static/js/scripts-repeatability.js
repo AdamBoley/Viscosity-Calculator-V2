@@ -1,7 +1,9 @@
 //repeatability calculations
 
-let repeatabilityButton = document.getElementById('submit-repeatability');
-repeatabilityButton.addEventListener('click', averageViscosityRepeatability);
+document.addEventListener("DOMContentLoaded", function(){
+    let repeatabilityButton = document.getElementById('submit-repeatability');
+    repeatabilityButton.addEventListener('click', averageViscosityRepeatability);
+})
 
 function averageViscosityRepeatability() {//retrieves number inputs, calculates average viscosity
 
@@ -185,9 +187,10 @@ function repeatabilityChecker(viscosity1, viscosity2, repeatabilityUpper, repeat
     let repeatabilityDetailsButton = document.getElementById('repeatability-details-button');
     repeatabilityDetailsButton.style.display = 'block';
 }
-
-let repeatabilityDetailsButton = document.getElementById('repeatability-details-button');
-repeatabilityDetailsButton.addEventListener('click', repeatabilityDetails);
+document.addEventListener("DOMContentLoaded", function(){
+    let repeatabilityDetailsButton = document.getElementById('repeatability-details-button');
+    repeatabilityDetailsButton.addEventListener('click', repeatabilityDetails);
+})
 
 function repeatabilityDetails() {//displays unrounded calculation values
 
@@ -201,8 +204,10 @@ function repeatabilityDetails() {//displays unrounded calculation values
     repeatabilityDetailsDiv.style.display = 'block';
 }
 
-let repeatabilityResetButton = document.getElementById('repeatability-reset');
-repeatabilityResetButton.addEventListener('click', repeatabilityReset);
+document.addEventListener("DOMContentLoaded", function(){
+    let repeatabilityResetButton = document.getElementById('repeatability-reset');
+    repeatabilityResetButton.addEventListener('click', repeatabilityReset);
+})
 
 function repeatabilityReset() {//resets calculation article
 

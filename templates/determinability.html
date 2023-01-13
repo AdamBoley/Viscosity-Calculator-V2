@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
 <div class="container">
@@ -9,7 +11,6 @@
         <h2 class="text-center">Instructions for use</h2>
 
         <ol>
-
             <li>Select your the sample type and temperature from the drop-down menu below that most closely matches the test you are checking</li>
             <li>If you are unsure what sample type to select, <a href="{% url 'discussion' %}">click here to open the guidance page</a> </li>
             <li>Use the drop-down menu to select the viscometer used</li>
@@ -18,9 +19,9 @@
             <li>The tool will calculate all of the data you need to check a viscosity test</li>
             <li>Click the <span class="mimic-button">calculation details</span> button to see the unrounded calculation values</li>
             <li>Once your have checked your data, click the <span class="mimic-button">reset</span> button to clear the inputs and outputs, and reset the tool</li>
-
         </ol>
     </div>
+    <!-- User input section -->
     <div class="row">
 
         {% if suspended %}
@@ -41,16 +42,15 @@
         </div>
 
         <div class="col-6">
-            <select name="" id="">
+            <select id="constant-input">
                 <option disabled selected value="disabled"> -- select a viscometer -- </option>
                 {% for viscometer in object_list %}
-                    <option value="">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
+                    <option value="{{viscometer.constant}}">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
                 {% endfor %}
             </select>
         </div>
 
         {% endif %}
-
 
         {% if reverse %}
 
@@ -63,27 +63,27 @@
             </div>
 
             <div id="run-time-2-div" class="mb-5">
-                <label for="run-time-1">Run Time 2</label>
-                <input type="number" id="run-time-1" min="200" max="900"><span class="input-unit">seconds</span>
+                <label for="run-time-2">Run Time 2</label>
+                <input type="number" id="run-time-2" min="200" max="900"><span class="input-unit">seconds</span>
             </div>            
 
         </div>
 
         <div class="col-6">
             <div class="mb-5">
-                <select name="" id="">
+                <select id="constant-1-input">
                     <option disabled selected value="disabled"> -- select a viscometer -- </option>
                     {% for viscometer in object_list %}
-                        <option value="">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
+                        <option value="{{viscometer.constant}}">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
                     {% endfor %}
                 </select>
             </div>
             
             <div>
-                <select name="" id="">
+                <select id="constant-2-input">
                     <option disabled selected value="disabled"> -- select a viscometer -- </option>
                     {% for viscometer in object_list %}
-                        <option value="">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
+                        <option value="{{viscometer.constant}}">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -92,7 +92,98 @@
 
         {% endif %}
 
+        <p>Select your sample type and temperature</p>
+
+        <select id="sample-type-determinability">
+            <option disabled selected value="disabled"> -- select an option -- </option>
+            <option value="BO40">Base Oils at 40C</option>
+            <option value="BO100">Base Oils at 100C</option>
+            <option value="FO40">Formulated Oils at 40C</option>
+            <option value="FO100">Formulated Oils at 100C</option>
+            <option value="FO150">Formulated Oils at 150C</option>
+            <option value="KD40">Kerosene, diesel and biodiesel at 40C</option>
+            <option value="PW100">Petroleum wax at 100C</option>
+            <option value="RFO50">Residual Fuel Oils at 50C</option>
+            <option value="RFO100">Residual Fuel Oils at 100C</option>
+            <option value="ADD100">Additives at 100C</option>
+            <option value="GO40">Gas Oils at 40C</option>
+            <option value="JFM20">Jet Fuels at -20C</option>
+            <option value="CR">Crude oils and residues</option>
+        </select>
+        
+        {% if suspended %}
+            <button type="submit" id="submit-ubbelohde">calculate</button>
+        {% endif %}
+        {% if reverse %}
+            <button type="submit" id="submit-zeitfuchs">calculate</button>
+        {% endif %}
+        <button id="reset-determinability">reset</button>
+        
+    </div>
+    <!-- Calculation output section -->
+    <div class="row">
+        <div>
+            <p>Calculation results:</p>
+        </div>
+
+        <div class="calculated-output-div">
+
+            <p id="determinability-kv-1-label" class="output-label">Kinematic Viscosity 1:</p>
+            <span id="determinability-kv-1"></span><span class="output-unit" id="determinability-kv-1-units">cSt</span>
+
+        </div>
+
+        <div class="calculated-output-div">
+
+            <p id="determinability-kv-2-label" class="output-label">Kinematic Viscosity 2:</p>
+            <span id="determinability-kv-2"></span><span class="output-unit" id="determinability-kv-2-units">cSt</span>
+
+        </div>
+
+        <div class="calculated-output-div">
+
+            <p id="determinability-final-kv-label" class="output-label">Final Calculated Viscosity:</p>
+            <span id="determinability-final-kv"></span><span class="output-unit" id="determinability-final-kv-units">cSt</span>
+
+        </div>
+
+        <div class="calculated-output-div">
+
+            <p id="determinability-equation-label" class="output-label">Determinability equation:</p>
+            <span id="determinability-equation"></span>
+
+        </div>
+
+        <div class="calculated-output-div">
+
+            <p id="determinability-factor-label" class="output-label">Determinability factor:</p>
+            <span id="determinability-factor"></span><span class="output-unit" id="determinability-factor-units">cSt</span>
+
+        </div>
+
+        <div class="calculated-output-div">
+
+            <p id="determinability-upper-limit-label" class="output-label">Determinability upper limit:</p>
+            <span id="determinability-upper-limit"></span><span class="output-unit" id="determinability-upper-limit-units">cSt</span>
+
+        </div>
+
+        <div class="calculated-output-div">
+
+            <p id="determinability-lower-limit-label" class="output-label">Determinability lower limit:</p>
+            <span id="determinability-lower-limit"></span><span class="output-unit" id="determinability-lower-limit-units">cSt</span>
+
+        </div>
+
+        <div id="determinability-output" class="calculated-output-div"></div>
+
+        <button id="determinability-details-button">Calculation details</button>
+
+        <div class="calculated-output-div" id="determinability-details"></div>
     </div>
 </div>
 
+<script src="{% static 'js/scripts-determinability.js' %}"></script>
+
 {% endblock %}
+
