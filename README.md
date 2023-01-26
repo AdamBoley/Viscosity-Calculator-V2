@@ -13,10 +13,10 @@ Close to the end of the original project's development, I explored automated tes
 So, the objectives for this project are:
 
 - Implement the Django framework:
-    - Attach a database to hold viscometer information
-    - Enable the admin backend to allow for viscometer management
-    - Create models for both Ubbelohde/suspended-flow and Zeitfuchs/cross-arm reverse-flow viscometers
-    - Create a view for each of the 5 different Calculation Articles in the original project
+    - Attach a database to hold viscometer information - done via ElephantSQL
+    - Enable the admin backend to allow for viscometer management - done, can access admin panel
+    - Create models for both Ubbelohde/suspended-flow and Zeitfuchs/cross-arm reverse-flow viscometers - refined to one model for easier use
+    - Create a view for each of the 5 different Calculation Articles in the original project - done
 
 - Implement Bootstrap to enable responsiveness:
     - Add a Bootstrap navbar to base.html
