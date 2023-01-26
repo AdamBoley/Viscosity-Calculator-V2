@@ -6,20 +6,23 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="text-center">Determinability Calculator</h1>
+        <div class="col-12">
+            <h1 class="text-center">Determinability Calculator</h1>
 
-        <h2 class="text-center">Instructions for use</h2>
+            <h2 class="text-center">Instructions for use</h2>
 
-        <ol>
-            <li>Select your the sample type and temperature from the drop-down menu below that most closely matches the test you are checking</li>
-            <li>If you are unsure what sample type to select, <a href="{% url 'discussion' %}">click here to open the guidance page</a> </li>
-            <li>Use the drop-down menu to select the viscometer used</li>
-            <li>Enter your run-times into the labelled boxes</li>
-            <li>Check your entered information and press the <span class="mimic-button">calculate</span> button</li>
-            <li>The tool will calculate all of the data you need to check a viscosity test</li>
-            <li>Click the <span class="mimic-button">calculation details</span> button to see the unrounded calculation values</li>
-            <li>Once your have checked your data, click the <span class="mimic-button">reset</span> button to clear the inputs and outputs, and reset the tool</li>
-        </ol>
+            <ol>
+                <li>Select your the sample type and temperature from the drop-down menu below that most closely matches the test you are checking</li>
+                <li>If you are unsure what sample type to select, <a href="{% url 'discussion' %}">click here to open the guidance page</a> </li>
+                <li>Use the drop-down menu to select the viscometer used</li>
+                <li>Enter your run-times into the labelled boxes</li>
+                <li>Check your entered information and press the <span class="mimic-button">calculate</span> button</li>
+                <li>The tool will calculate all of the data you need to check a viscosity test</li>
+                <li>Click the <span class="mimic-button">calculation details</span> button to see the unrounded calculation values</li>
+                <li>Once your have checked your data, click the <span class="mimic-button">reset</span> button to clear the inputs and outputs, and reset the tool</li>
+            </ol>
+        </div>
+        
     </div>
     <!-- User input section -->
     <div class="row">
@@ -32,14 +35,16 @@
         {% if suspended %}
 
         <div class="col-12 col-md-3">
-            <div id="run-time-1-div" class="mb-5">
-                <label for="run-time-1" class="form-label">Run Time 1</label>
-                <input type="number" class="form-control" id="run-time-1" min="200" max="900"><span class="input-unit">seconds</span>
+            <div class="mb-5">
+                <label for="run-time-1" class="form-label">Run Time 1 in seconds</label>
+                <input type="number" class="form-control" id="run-time-1" min="200" max="900">
+                <!-- <span class="input-unit">seconds</span> -->
             </div>
             
-            <div id="run-time-2-div" class="">
-                <label for="run-time-2" class="form-label">Run Time 2</label>
-                <input type="number" class="form-control" id="run-time-2" min="200" max="900"><span class="input-unit">seconds</span>
+            <div class="">
+                <label for="run-time-2" class="form-label">Run Time 2 in seconds</label>
+                <input type="number" class="form-control" id="run-time-2" min="200" max="900">
+                <!-- <span class="input-unit">seconds</span> -->
             </div>
 
         </div>
@@ -58,17 +63,17 @@
 
         {% if reverse %}
 
-        <h3 class="text-center">Select reverse-flow viscometers</h3>
-
         <div class="col-12 col-md-3">
-            <div id="run-time-1-div" class="mb-5">
-                <label for="run-time-1" class="form-label">Run Time 1</label>
-                <input type="number" id="run-time-1" min="200" max="900"><span class="input-unit">seconds</span>
+            <div class="mb-5">
+                <label for="run-time-1" class="form-label">Run Time 1 in seconds</label>
+                <input type="number" class="form-control" id="run-time-1" min="200" max="900">
+                <!-- <span class="input-unit">seconds</span> -->
             </div>
 
-            <div id="run-time-2-div" class="mb-5">
-                <label for="run-time-2" class="form-label">Run Time 2</label>
-                <input type="number" id="run-time-2" min="200" max="900"><span class="input-unit">seconds</span>
+            <div class="mb-5">
+                <label for="run-time-2" class="form-label">Run Time 2 in seconds</label>
+                <input type="number" class="form-control" id="run-time-2" min="200" max="900">
+                <!-- <span class="input-unit">seconds</span> -->
             </div>            
 
         </div>
@@ -76,7 +81,7 @@
         <div class="col-12 col-md-3">
             <div class="mb-5">
                 <label for="constant-1-input" class="form-label">Select viscometer 1</label>
-                <select id="constant-1-input">
+                <select id="constant-1-input" class="form-control">
                     <option disabled selected value="disabled"> -- select a viscometer -- </option>
                     {% for viscometer in object_list %}
                         <option value="{{viscometer.constant}}">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
@@ -85,8 +90,8 @@
             </div>
             
             <div>
-                <select id="constant-2-input">
-                    <label for="constant-2-input" class="form-label">Select viscometer 2</label>
+                <label for="constant-2-input" class="form-label">Select viscometer 2</label>
+                <select id="constant-2-input" class="form-control">
                     <option disabled selected value="disabled"> -- select a viscometer -- </option>
                     {% for viscometer in object_list %}
                         <option value="{{viscometer.constant}}">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
@@ -201,9 +206,7 @@
 
         </div>
 
-        <div id="determinability-output" class="col-12 text-center mt-3 mb-3 output-number">
-
-        </div>
+        <div id="determinability-output" class="col-12 text-center mt-3 mb-3 output-number"></div>
 
     </div>
 

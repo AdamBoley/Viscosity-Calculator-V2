@@ -1,9 +1,153 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-<script src="{% static 'js/scripts-repeatability.js' %}"></script>
+<div class="container">
+    <div class="row">
 
-<h1>Repeatability</h1>
+        <div class="col-12">
+            <h1 class="text-center">Repeatability Calculator</h1>
+
+            <h2 class="text-center">Instructions for use</h2>
+
+            <ol>
+                <li>Select the sample type and temperature that most closely matches the results you are checking the repeatability of from the drop-down menu</li>
+                <li>If you are unsure what sample type to select, <a href="discussion.html#sample" target="_blank">click here to open the guidance page</a></li>
+                <li>Enter the two viscosity results into the labelled boxes</li>
+                <li>Click the <span class="mimic-button">calculate</span> button and the tool will perform the calculations and tell you whether the results are repeatable or not</li>
+                <li>Click the <span class="mimic-button">reset</span> button to clear the inputs and outputs and ready the tool to check more results</li>
+            </ol>
+        </div>
+        
+    </div>
+
+    <div class="row">
+
+        <h3 class="text-center">Enter viscosities and sample type</h3>
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-12 col-md-6 text-center">
+            <div class="mb-3">
+
+                <label for="viscosity-repeatability-1" class="form-label">Viscosity 1 in cSt:</label>
+                <input type="number" id="viscosity-repeatability-1" class="form-control">
+
+            </div>
+    
+            <div class="mb-3">
+    
+                <label for="viscosity-repeatability-2" class="form-label">Viscosity 2 in cSt:</label>
+                <input type="number" id="viscosity-repeatability-2" class="form-control">
+    
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-12 col-md-6 text-center">
+
+            <label for="sample-type-repeatability" class="form-label">Select the sample type</label>
+            <select id="sample-type-repeatability" class="form-control">
+                    
+                <option disabled selected value="disabled"> -- select an option -- </option>
+                <option value="BO40">Base Oils at 40C</option>
+                <option value="BO100">Base Oils at 100C</option>
+                <option value="FO40">Formulated Oils at 40C</option>
+                <option value="FO100">Formulated Oils at 100C</option>
+                <option value="FO150">Formulated Oils at 150C</option>
+                <option value="PW100">Petroleum wax at 100C</option>
+                <option value="RFO50">Residual Fuel Oils at 50C</option>
+                <option value="RFO100">Residual Fuel Oils at 100C</option>
+                <option value="ADD100">Additives at 100C</option>
+                <option value="GO40">Gas Oils at 40C</option>
+                <option value="JFM20">Jet Fuels at -20C</option>
+                <option value="KD40">Kerosene, diesel and biodiesel at 40C</option>
+                <option value="UFO40">Used or in-service Formulated Oils at 40C</option>
+                <option value="UFO100">Used or in-service Formulated Oils at 100C</option>
+                <option value="CR">Crude oils and residues</option>
+
+            </select>
+
+        </div>
+
+        
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-6 col-md-3 text-center">
+            <button type="submit" id="submit-repeatability" class="btn btn-success">calculate</button>
+        </div>
+        <div class="col-6 col-md-3 text-center">
+            <button type="submit" id="repeatability-reset" class="btn btn-warning">reset</button>
+        </div>
+            
+    </div>
+
+    <div class="row mt-3">
+
+        <h3 class="text-center output-label" id="repeatability-output-header">Calculation results</h3>
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-12 text-center mt-3">
+            
+            <p id="repeatability-average-viscosity-label" class="output-label">Average viscosity:</p>
+            <span id="repeatability-average-viscosity" class="output-number"></span><span class="output-unit" id="repeatability-average-viscosity-units"> cSt</span>
+
+        </div>
+
+        <div class="col-12 text-center mt-3">
+            <p id="repeatability-equation-label" class="output-label">Repeatability equation:</p>
+            <span id="repeatability-equation" class="output-number"></span>
+        </div>
+        
+        <div class="col-12 text-center mt-3">
+            <p id="repeatability-factor-label" class="output-label">Repeatability factor:</p>
+            <span id="repeatability-factor" class="output-number"></span><span class="output-unit" id="repeatability-factor-units"> cSt</span>
+        </div>
+        
+        <div class="col-12 text-center mt-3">
+            <p id="repeatability-upper-limit-label" class="output-label">Repeatability upper limit:</p>
+            <span id="repeatability-upper-limit" class="output-number"></span><span class="output-unit" id="repeatability-upper-limit-units"> cSt</span>
+        </div>
+        
+        <div class="col-12 text-center mt-3">
+            <p id="repeatability-lower-limit-label" class="output-label">Repeatability lower limit:</p>
+            <span id="repeatability-lower-limit" class="output-number"></span><span class="output-unit" id="repeatability-lower-limit-units"> cSt</span>
+        </div>
+        
+        <div class="col-12 text-center mt-3 output-number" id="repeatability-output"></div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-12 text-center mt-3">
+            <p id="repeatability-details-header">Click the button below to show a detailed breakdown of the calculations</p>
+        </div>
+
+        <div class="col-12 text-center mt-3">
+            <button type="submit" id="repeatability-details-button" class="btn btn-primary">Calculation details</button>
+        </div>
+
+        <div class="col-12 text-center mt-3" id="repeatability-details"></div>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/scripts-repeatability.js' %}"></script>
 
 {% endblock %}

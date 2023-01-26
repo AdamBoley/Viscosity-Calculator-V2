@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
 function getValuesUbbelohde() {
     //retrieves values from number inputs
 
-    let select = document.getElementById('sample-type-determinability'); 
+    let select = document.getElementById('sample-type-determinability');
     let runTime1 = document.getElementById('run-time-1');
     let runTime2 = document.getElementById('run-time-2');
     let constant = document.getElementById('constant-input');

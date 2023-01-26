@@ -36,3 +36,7 @@ main {
 #determinability-details-button, #determinability-details, #determinability-details-header {
     visibility: hidden;
 }
+
+#repeatability-details-header, #repeatability-details-button, #repeatability-details {
+    visibility: hidden;
+}
