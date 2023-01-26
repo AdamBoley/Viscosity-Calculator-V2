@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function(){
     reproducibilityButton.addEventListener('click', averageViscosityReproducibility);
 })
 
-function averageViscosityReproducibility() {//retrives supplied viscosities, calculates average
+function averageViscosityReproducibility() {
+    //retrives supplied viscosities, calculates average
 
     let select = document.getElementById('sample-type-reproducibility');
     let viscosity1 = document.getElementById('viscosity-reproducibility-1');
@@ -35,7 +36,8 @@ function averageViscosityReproducibility() {//retrives supplied viscosities, cal
     }
 }
 
-function reproducibility(viscosity1, viscosity2, averageViscosity) {//calculates reproducibility factor
+function reproducibility(viscosity1, viscosity2, averageViscosity) {
+    //calculates reproducibility factor
 
     let select = document.getElementById('sample-type-reproducibility');
     let message = '';
@@ -146,26 +148,29 @@ function reproducibility(viscosity1, viscosity2, averageViscosity) {//calculates
     reproducibilityUpperLimit(viscosity1, viscosity2, averageViscosity, reproducibility);
 }
 
-function reproducibilityUpperLimit(viscosity1, viscosity2, averageViscosity, reproducibility) {//calculates upper limit
+function reproducibilityUpperLimit(viscosity1, viscosity2, averageViscosity, reproducibility) {
+    //calculates upper limit
 
     let reproducibilityUpper = averageViscosity + reproducibility;
-    let preciseReproducibilityUpper = reproducibilityUpper.toPrecision(4);
+    let precisereproducibilityUpper = reproducibilityUpper.toPrecision(4);
     document.getElementById('reproducibility-upper-limit-label').style.display = 'block';
-    document.getElementById('reproducibility-upper-limit').textContent = preciseReproducibilityUpper;
+    document.getElementById('reproducibility-upper-limit').textContent = precisereproducibilityUpper;
     document.getElementById('reproducibility-upper-limit-units').style.display = 'inline';
 
     let reproducibilityDetails = document.getElementById('reproducibility-details');
     reproducibilityDetails.innerHTML += `<p>Upper limit = ${reproducibilityUpper} cSt</p>`;
 
-    reproducibilityLowerLimit(viscosity1, viscosity2, averageViscosity, reproducibility, reproducibilityUpper); 
+    reproducibilityLowerLimit(viscosity1, viscosity2, averageViscosity, reproducibility, reproducibilityUpper);
 }
 
-function reproducibilityLowerLimit(viscosity1, viscosity2, averageViscosity, reproducibility, reproducibilityUpper) {//calculates lower limit
+function reproducibilityLowerLimit(viscosity1, viscosity2, averageViscosity, reproducibility, reproducibilityUpper) {
+    //calculates lower limit
 
     let reproducibilityLower = averageViscosity - reproducibility;
-    let preciseReproducibilityLower = reproducibilityLower.toPrecision(4);
+    let precisereproducibilityLower = reproducibilityLower.toPrecision(4);
+
     document.getElementById('reproducibility-lower-limit-label').style.display = 'block';
-    document.getElementById('reproducibility-lower-limit').textContent = preciseReproducibilityLower;
+    document.getElementById('reproducibility-lower-limit').textContent = precisereproducibilityLower;
     document.getElementById('reproducibility-lower-limit-units').style.display = 'inline';
 
     let reproducibilityDetails = document.getElementById('reproducibility-details');
@@ -174,50 +179,48 @@ function reproducibilityLowerLimit(viscosity1, viscosity2, averageViscosity, rep
     reproducibilityChecker(viscosity1, viscosity2, reproducibilityUpper, reproducibilityLower);
 }
 
-function reproducibilityChecker(viscosity1, viscosity2, reproducibilityUpper, reproducibilityLower) {//checks if supplied viscosities are less than upper limit and greater than lower limit
+function reproducibilityChecker(viscosity1, viscosity2, reproducibilityUpper, reproducibilityLower) {
+    //checks whether supplied viscosities are greater than lower limit and less than upper limit
 
     if(viscosity1 > reproducibilityLower && viscosity1 < reproducibilityUpper && viscosity2 > reproducibilityLower && viscosity2 < reproducibilityUpper) {
-
         document.getElementById('reproducibility-output').innerHTML = `
         <i class="fas fa-check icon"></i>
-        <span>Your viscosities are reproducible</span>
-        <p>Click the button below to see a detailed breakdown of the calculations</p>`;
+        <span>Your viscosities are repeatable</span>`;
     }
     else {
         document.getElementById('reproducibility-output').innerHTML = `
         <i class="fas fa-xmark icon"></i>
-        <span>Your viscosities are not reproducible</span>
-        <p>Click the button below to see a detailed breakdown of the calculations</p>`;
+        <span>Your viscosities are not repeatable</span>`;
     }
 
-    let reproducibilityDetailsButton = document.getElementById('reproducibility-details-button');
-    reproducibilityDetailsButton.style.display = 'block';
+    document.getElementById('reproducibility-details-button').style.visibility = 'visible';
+
+    document.getElementById('reproducibility-details-header').style.visibility = 'visible';
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    let reproducibilityDetailsButton = document.getElementById('reproducibility-details-button');
-    reproducibilityDetailsButton.addEventListener('click', reproducibilityDetails);
+    document.getElementById('reproducibility-details-button').addEventListener('click', reproducibilityDetails);
 })
 
-function reproducibilityDetails() {//displays unrounded values
+function reproducibilityDetails() {
+    //displays unrounded calculation values
 
-    let reproducibilityUserInput = document.getElementById('reproducibility-user-input');
-    reproducibilityUserInput.style.height = '50vh';
-
-    let reproducibilityCalculatedOutput = document.getElementById('reproducibility-calculated-output');
-    reproducibilityCalculatedOutput.style.height = '70vh';
-
-    let reproducibilityDetailsDiv = document.getElementById('reproducibility-details');
-    reproducibilityDetailsDiv.style.display = 'block';
+    document.getElementById('reproducibility-details').style.visibility = 'visible';
 }
 
-let reproducibilityResetButton = document.getElementById('reproducibility-reset');
-reproducibilityResetButton.addEventListener('click', reproducibilityReset);
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById('reproducibility-reset').addEventListener('click', reproducibilityReset);
+})
 
-function reproducibilityReset() {//resets calculation article
+function reproducibilityReset() {
+    //resets calculation article
 
+    //resets inputs
     document.getElementById('viscosity-reproducibility-1').value = '';
     document.getElementById('viscosity-reproducibility-2').value = '';
+    document.getElementById('sample-type-reproducibility').selectedIndex = 0;
+
+    //resets output numbers
     document.getElementById('reproducibility-average-viscosity').textContent = '';
     document.getElementById('reproducibility-equation').textContent = '';
     document.getElementById('reproducibility-factor').textContent = '';
@@ -226,17 +229,21 @@ function reproducibilityReset() {//resets calculation article
     document.getElementById('reproducibility-output').textContent = '';
     document.getElementById('viscosity-reproducibility-1').focus();
 
+    // resets output units
     document.getElementById('reproducibility-average-viscosity-units').style.display = 'none';
     document.getElementById('reproducibility-factor-units').style.display = 'none';
     document.getElementById('reproducibility-upper-limit-units').style.display = 'none';
     document.getElementById('reproducibility-lower-limit-units').style.display = 'none';
-    document.getElementById('reproducibility-details-button').style.display = 'none';
-    document.getElementById('reproducibility-details').style.display = 'none';
-    document.getElementById('reproducibility-user-input').style.height = '55vh';
-    document.getElementById('reproducibility-calculated-output').style.height = '55vh';
+    
+    //resets output labels
     document.getElementById('reproducibility-average-viscosity-label').style.display = 'none';
     document.getElementById('reproducibility-equation-label').style.display = 'none';
     document.getElementById('reproducibility-factor-label').style.display = 'none';
     document.getElementById('reproducibility-upper-limit-label').style.display = 'none';
     document.getElementById('reproducibility-lower-limit-label').style.display = 'none';
+    
+    //resets details button, header and body
+    document.getElementById('reproducibility-details-button').style.visibility = 'hidden';
+    document.getElementById('reproducibility-details').style.visibility = 'hidden';
+    document.getElementById('reproducibility-details-header').style.visibility = 'hidden';
 }

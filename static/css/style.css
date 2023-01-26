@@ -40,3 +40,7 @@ main {
 #repeatability-details-header, #repeatability-details-button, #repeatability-details {
     visibility: hidden;
 }
+
+#reproducibility-details-header, #reproducibility-details-button, #reproducibility-details {
+    visibility: hidden;
+}
