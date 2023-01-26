@@ -48,6 +48,7 @@ function calculateUbbelohde(runTime1, runTime2, constant) {
     let preciseKv1 = kv1.toPrecision(4);
     let preciseKv2 = kv2.toPrecision(4);
 
+    document.getElementById('determinability-results').style.display = 'block';
     document.getElementById('determinability-kv-1-label').style.display = 'block';
     document.getElementById('determinability-kv-2-label').style.display = 'block';
     document.getElementById('determinability-kv-1').innerText = preciseKv1;
@@ -220,6 +221,7 @@ function determinability(finalViscosity, kv1, kv2) {
             break;
     }
 
+    
     document.getElementById('determinability-equation-label').style.display = 'block';
     document.getElementById('determinability-equation').innerText = message;
     document.getElementById('determinability-factor-label').style.display = 'block';
@@ -270,34 +272,28 @@ function checker(upperAllowedViscosity, lowerAllowedViscosity, kv1, kv2) {
     if(kv1 > lowerAllowedViscosity && kv1 < upperAllowedViscosity && kv2 > lowerAllowedViscosity && kv2 < upperAllowedViscosity) {
         document.getElementById('determinability-output').innerHTML = `
         <i class="fas fa-check"></i>
-        <span>Your viscosities are determinable</span>
-        <p>Click the button below to see a detailed breakdown of the calculations</p>`;
+        <span>Your viscosities are determinable</span>`;
     }
 
     else {
         document.getElementById('determinability-output').innerHTML = `
         <i class="fas fa-xmark"></i>
-        <span>Your viscosities are not determinable</span>
-        <p>Click the button below to see a detailed breakdown of the calculations</p>`;
+        <span>Your viscosities are not determinable</span>`;
     }
 
-    let determinabilityDetailsButton = document.getElementById('determinability-details-button');
-    determinabilityDetailsButton.style.display = 'block';
+    document.getElementById('determinability-details-button').style.visibility = 'visible';
+
+    document.getElementById('determinability-details-header').style.visibility = 'visible';
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    let determinabilityDetailsButton = document.getElementById('determinability-details-button');
-    determinabilityDetailsButton.addEventListener('click', determinabilityDetails);
+    document.getElementById('determinability-details-button').addEventListener('click', determinabilityDetails);
 })
 
 function determinabilityDetails() {
     //displays unrounded values
 
-    let determinabilityCalculatedOutput = document.getElementById('determinability-calculated-output');
-    determinabilityCalculatedOutput.style.height = '100vh';
-    
-    let determinabilityDetailsDiv = document.getElementById('determinability-details');
-    determinabilityDetailsDiv.style.display = 'block';
+    document.getElementById('determinability-details').style.visibility = 'visible';
 }
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -311,6 +307,8 @@ function reset() {
     document.getElementById('run-time-1').value = '';
     document.getElementById('run-time-2').value = '';
     document.getElementById('run-time-1').focus();
+    document.getElementById('constant-input').selectedIndex = 0 // resets viscometer dropdown menu to the initial disabled option
+    document.getElementById('sample-type-determinability').selectedIndex = 0
 
     document.getElementById('determinability-kv-1').textContent = '';
     document.getElementById('determinability-kv-2').textContent = '';
@@ -336,4 +334,6 @@ function reset() {
     document.getElementById('determinability-factor-label').style.display = 'none';
     document.getElementById('determinability-upper-limit-label').style.display = 'none';
     document.getElementById('determinability-lower-limit-label').style.display = 'none';
+    document.getElementById('determinability-results').style.display = 'none';
+    document.getElementById('determinability-details-header').style.visibility = 'hidden';
 }

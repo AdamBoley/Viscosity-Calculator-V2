@@ -99,7 +99,7 @@
         {% endif %}
     </div>
 
-    <div class="row">
+    <div class="row mt-3">
 
         <div class="col-0 col-md-3"></div>
         
@@ -148,75 +148,76 @@
 
         <div class="col-0 col-md-3"></div>
 
-        <div class="col-12 text-center output-label">
-            <p>Calculation results:</p>
+        <div class="col-12 text-center mt-3">
+            <p id="determinability-results" class="output-label">Calculation results:</p>
         </div>
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-3">
 
             <p id="determinability-kv-1-label" class="output-label">Kinematic Viscosity 1:</p>
-            <span id="determinability-kv-1"></span><span class="output-unit" id="determinability-kv-1-units">cSt</span>
+            <span id="determinability-kv-1" class="output-number"></span><span class="output-unit" id="determinability-kv-1-units"> cSt</span>
 
         </div>
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-3">
 
             <p id="determinability-kv-2-label" class="output-label">Kinematic Viscosity 2:</p>
-            <span id="determinability-kv-2"></span><span class="output-unit" id="determinability-kv-2-units">cSt</span>
+            <span id="determinability-kv-2" class="output-number"></span><span class="output-unit" id="determinability-kv-2-units"> cSt</span>
 
         </div>
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-3">
 
             <p id="determinability-final-kv-label" class="output-label">Final Calculated Viscosity:</p>
-            <span id="determinability-final-kv"></span><span class="output-unit" id="determinability-final-kv-units">cSt</span>
+            <span id="determinability-final-kv" class="output-number"></span><span class="output-unit" id="determinability-final-kv-units"> cSt</span>
 
         </div>
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-3">
 
             <p id="determinability-equation-label" class="output-label">Determinability equation:</p>
-            <span id="determinability-equation"></span>
+            <span id="determinability-equation" class="output-number"></span>
 
         </div>
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-3">
 
             <p id="determinability-factor-label" class="output-label">Determinability factor:</p>
-            <span id="determinability-factor"></span><span class="output-unit" id="determinability-factor-units">cSt</span>
+            <span id="determinability-factor" class="output-number"></span><span class="output-unit" id="determinability-factor-units"> cSt</span>
 
         </div>
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-3">
 
             <p id="determinability-upper-limit-label" class="output-label">Determinability upper limit:</p>
-            <span id="determinability-upper-limit"></span><span class="output-unit" id="determinability-upper-limit-units">cSt</span>
+            <span id="determinability-upper-limit" class="output-number"></span><span class="output-unit" id="determinability-upper-limit-units"> cSt</span>
 
         </div>
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center mt-3">
 
             <p id="determinability-lower-limit-label" class="output-label">Determinability lower limit:</p>
-            <span id="determinability-lower-limit"></span><span class="output-unit" id="determinability-lower-limit-units">cSt</span>
+            <span id="determinability-lower-limit" class="output-number"></span><span class="output-unit" id="determinability-lower-limit-units"> cSt</span>
 
         </div>
 
-        <div id="determinability-output" class="col-12 text-center">
+        <div id="determinability-output" class="col-12 text-center mt-3 mb-3 output-number">
 
         </div>
 
     </div>
+
     <div class="row">
 
-        <div class="col-12 text-center output-label">
-            <p>Click the button below to see a detailed breakdown of the calculations</p>
+        <div class="col-12 text-center mt-3">
+            <p id="determinability-details-header">Click the button below to see a detailed breakdown of the calculations</p>
         </div>
 
-        <div class="col-12 text-center output-label">
+        <div class="col-12 text-center mt-3">
             <button id="determinability-details-button" class="btn btn-primary">Calculation details</button>
         </div>
 
-        <div class="col-12 text-center" id="determinability-details"></div>
+        <div class="col-12 text-center mt-3 mb-5" id="determinability-details"></div>
     
     </div>
 

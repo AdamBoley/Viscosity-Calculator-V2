@@ -1,3 +1,5 @@
+/* Generic site-wide style rules */
+
 main {
     background-color: lightblue;
     min-height: 100vh
@@ -15,7 +17,22 @@ main {
     display: none;
 }
 
+.output-label {
+    margin-block-end: 4px;
+}
+
+.output-number, .output-unit {
+    font-weight: 700;
+    font-size: large;
+}
+
 .superscript {
     vertical-align: super;
     font-size: x-small;
+}
+
+/* determinability page specific style rules */
+
+#determinability-details-button, #determinability-details, #determinability-details-header {
+    visibility: hidden;
 }
