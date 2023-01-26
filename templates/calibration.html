@@ -1,9 +1,156 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-<script src="{% static 'js/scripts-calibration.js' %}"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
 
-<h1>Calibration</h1>
+            <h1 class="text-center">Viscometer Calibration</h1>
+
+            <h2 class="text-center">Instructions for use</h2>
+
+            <ol>
+                <li>Perform a calibration test on a viscometer using a standard calibration fluid</li>
+                <li><a href="discussion.html#calibration" target="_blank">Click here to open the guidance page for more information on calibration tests</a></li>
+                <li>Enter your run-times and viscometer constant in the labelled boxes</li>
+                <li>Enter the viscosity of the calibration fluid that was used into the labelled box</li>
+                <li>Press <span class="mimic-button">calculate</span> and the tool will calculate and display the: </li>
+                <li>
+                    <ul>
+                        <li>average run time</li>
+                        <li>your observed viscosity</li>
+                        <li>the tolerance band and associated viscosity range</li>
+                        <li>the percentage difference between the viscosity of the calibration fluid and the observed viscosity</li>
+                        <li>a message indicating whether or not the percentage difference is small enough that the viscometer passes its calibration check</li>
+                    </ul>
+                </li>
+                
+                <li>Click the <span class="mimic-button">reset</span> button to clear the inputs and outputs and ready the tool to check another calibration test</li>
+            </ol>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <h3 class="text-center">Enter runtimes, viscometer constant and calibration fluid viscosity</h3>
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-12 col-md-3">
+            <div class="mb-3">
+                <label for="calibration-run-time-1" class="form-label">Run Time 1 in seconds</label>
+                <input type="number" class="form-control" id="calibration-run-time-1" min="200" max="900">
+                <!-- <span class="input-unit">seconds</span> -->
+            </div>
+            
+            <div class="">
+                <label for="calibration-run-time-2" class="form-label">Run Time 2 in seconds</label>
+                <input type="number" class="form-control" id="calibration-run-time-2" min="200" max="900">
+                <!-- <span class="input-unit">seconds</span> -->
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-3">
+            <label for="calibration-constant-input" class="form-label">Select viscometer</label>
+            <select id="calibration-constant-input" class="form-control">
+                <option disabled selected value="disabled"> -- select a viscometer -- </option>
+                {% for viscometer in object_list %}
+                    <option value="{{viscometer.constant}}">{{viscometer.serial_number}}, {{viscometer.constant}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-12 col-md-6">
+            <div class="mb-3">
+
+                <label for="calibration-fluid-viscosity" class="form-label">Calibration fluid viscosity in cSt:</label>
+                <input type="number" min="0" id="calibration-fluid-viscosity" class="form-control">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-6 col-md-3 text-center">
+            <button id="submit-calibration" class="btn btn-success">calculate</button>
+        </div>
+
+        <div class="col-6 col-md-3 text-center">
+            <button id="calibration-reset" class="btn btn-warning">reset</button>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-12 text-center mt-3">
+
+            <p id="calibration-average-run-time-label" class="output-label">Average run time:</p>
+            <span id="calibration-average-run-time" class="output-number"></span><span class="output-unit" id="calibration-average-run-time-units"> seconds</span>
+
+        </div>
+
+        <div class="col-12 text-center mt-3">
+
+            <p id="calibration-average-viscosity-label" class="output-label">Average viscosity:</p>
+            <span id="calibration-average-viscosity" class="output-number"></span><span class="output-unit" id="calibration-average-viscosity-units"> cSt</span>
+
+        </div>
+
+        <div class="col-12 text-center mt-3">
+
+            <p id="calibration-viscosity-range-label" class="output-label">Viscosity range of calibration fluid</p>
+            <span id="calibration-viscosity-range" class="output-number"></span><span class="output-unit" id="calibration-viscosity-range-units"> cSt</span>
+
+        </div>
+
+        <div class="col-12 text-center mt-3">
+
+            <p id="calibration-tolerance-band-label" class="output-label">Tolerance band</p>
+            <span id="calibration-tolerance-band" class="output-number"></span>
+
+        </div>
+
+        <div class="col-12 text-center mt-3">
+            <p id="calibration-percentage-difference-label" class="output-label">Percentage difference between observed viscosity and calibration fluid viscosity:</p>
+            <span id="calibration-percentage-difference" class="output-number"></span><span class="output-unit" id="calibration-percentage-difference-units"> %</span>
+            <p id="calibration-output"></p>
+
+        </div>
+
+        <div class="col-12 text-center mt-3">
+            <p id="calibration-details-header">Click the button below to show a detailed breakdown of the calculations</p>
+        </div>
+
+        <div class="col-12 text-center mt-3">
+            <button id="calibration-details-button" class="btn btn-success">Calculation details</button>
+        </div>
+
+        <div class="col-12 text-center mt-3 mb-5" id="calibration-details"></div>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/scripts-calibration.js' %}"></script>
 
 {% endblock %}

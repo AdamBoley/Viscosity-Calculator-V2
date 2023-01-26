@@ -44,3 +44,7 @@ main {
 #reproducibility-details-header, #reproducibility-details-button, #reproducibility-details {
     visibility: hidden;
 }
+
+#calibration-details-header, #calibration-details-button, #calibration-details {
+    visibility: hidden;
+}

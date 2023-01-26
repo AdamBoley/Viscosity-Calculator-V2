@@ -5,17 +5,18 @@ document.addEventListener("DOMContentLoaded", function(){
     calibrationCalculateButton.addEventListener('click', getValuesCalibration);
 })
 
-function getValuesCalibration() {//retrieves number input values
+function getValuesCalibration() {
+    //retrieves number input values
 
     let runTime1 = document.getElementById('calibration-run-time-1');
     let runTime2 = document.getElementById('calibration-run-time-2');
-    let constant = document.getElementById('calibration-constant');
+    let constant = document.getElementById('calibration-constant-input');
     let calibrationFluidViscosity = document.getElementById('calibration-fluid-viscosity');
 
     if(runTime1.value === '' || runTime2.value === '') {
         alert('Please enter two run-times');
     }
-    else if (constant.value === '') {
+    else if (constant.value === 'disabled') {
         alert('Please enter a constant');
     }
     else if (calibrationFluidViscosity.value === '') {
@@ -24,13 +25,14 @@ function getValuesCalibration() {//retrieves number input values
     else {
         let calibrationRunTime1 = parseFloat(document.getElementById('calibration-run-time-1').value);
         let calibrationRunTime2 = parseFloat(document.getElementById('calibration-run-time-2').value);
-        let calibrationConstant = parseFloat(document.getElementById('calibration-constant').value);
+        let calibrationConstant = parseFloat(document.getElementById('calibration-constant-input').value);
 
         calculateCalibration(calibrationRunTime1, calibrationRunTime2, calibrationConstant);
     }
 }
 
-function calculateCalibration(calibrationRunTime1, calibrationRunTime2, calibrationConstant) {//calculates average run-time, kinematic viscosities and average viscosity
+function calculateCalibration(calibrationRunTime1, calibrationRunTime2, calibrationConstant) {
+    //calculates average run-time, kinematic viscosities and average viscosity
 
     let averageRunTime = ((calibrationRunTime1 + calibrationRunTime2) / 2);
     let viscosity1 = calibrationRunTime1 * calibrationConstant;
@@ -52,7 +54,8 @@ function calculateCalibration(calibrationRunTime1, calibrationRunTime2, calibrat
     tolerance(averageViscosity);
 }
 
-function tolerance(averageViscosity) {//sets tolerance band based on calibration fluid viscosity
+function tolerance(averageViscosity) {
+    //sets tolerance band based on calibration fluid viscosity
 
     let calibrationFluidViscosity = document.getElementById('calibration-fluid-viscosity').value;
     let toleranceBand;
@@ -102,7 +105,8 @@ function tolerance(averageViscosity) {//sets tolerance band based on calibration
     percentageDifference(calibrationFluidViscosity, averageViscosity, toleranceBand);
 }
 
-function percentageDifference(calibrationFluidViscosity, averageViscosity, toleranceBand) {//calculates percentage difference between average viscosity and calibration fluid viscosity
+function percentageDifference(calibrationFluidViscosity, averageViscosity, toleranceBand) {
+    //calculates percentage difference between average viscosity and calibration fluid viscosity
     
     let numerator = calibrationFluidViscosity - averageViscosity;
     numerator = Math.abs(numerator);
@@ -124,48 +128,32 @@ function percentageDifference(calibrationFluidViscosity, averageViscosity, toler
     percentageDifferenceChecker(percentageDifference, toleranceBand);
 }
 
-function percentageDifferenceChecker(percentageDifference, toleranceBand) {//checks whether percentage difference is less than or greater than the tolerance band
+function percentageDifferenceChecker(percentageDifference, toleranceBand) {
+    //checks whether percentage difference is less than or greater than the tolerance band
 
     if(percentageDifference <= toleranceBand) {
         document.getElementById('calibration-output').innerHTML = `
         <i class="fas fa-check icon"></i>
-        <span>The viscometer passes the calibration check</span>
-        <p>Click the button below to see a detailed breakdown of the calculations</p>`;
+        <span>The viscometer passes the calibration check</span>`;
     }
     else if(percentageDifference > toleranceBand) {
         document.getElementById('calibration-output').innerHTML = `
         <i class="fas fa-xmark icon"></i>
-        <span>The viscometer fails the calibration check</span>
-        <p>Click the button below to see a detailed breakdown of the calculations</p>`;
+        <span>The viscometer fails the calibration check</span>`;
     }
 
-    let calibrationDetailsButton = document.getElementById('calibration-details-button');
-    calibrationDetailsButton.style.display = 'block';
+    document.getElementById('calibration-details-header').style.visibility = 'visible';
+    document.getElementById('calibration-details-button').style.visibility = 'visible';
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    let calibrationDetailsButton = document.getElementById('calibration-details-button');
-    calibrationDetailsButton.addEventListener('click', calibrationDetails);
+    document.getElementById('calibration-details-button').addEventListener('click', calibrationDetails);
 })
 
-function calibrationDetails() {//displays unrounded calculation values
-
-    let calibrationUserInput = document.getElementById('calibration-user-input');
-    if(screen.width < '400') {
-        calibrationUserInput.style.height = '55vh';
-    }
-    else if(screen.width < '1000') { //applies to smartphones in a horizontal configuration
-        calibrationUserInput.style.height = '450px';
-    }
-    else {
-        calibrationUserInput.style.height = '45vh';
-    }
-
-    let calibrationCalculatedOutput = document.getElementById('calibration-calculated-output');
-    calibrationCalculatedOutput.style.height = '80vh';
-
-    let calibrationDetailsDiv = document.getElementById('calibration-details');
-    calibrationDetailsDiv.style.display = 'block';
+function calibrationDetails() {
+    //displays unrounded calculation values
+    
+    document.getElementById('calibration-details').style.visibility = 'visible';
 }
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -173,11 +161,16 @@ document.addEventListener("DOMContentLoaded", function(){
     calibrationResetButton.addEventListener('click', calibrationReset);
 })
 
-function calibrationReset() {//resets calculation article for further use
+function calibrationReset() {
+    //resets calculation article for further use
 
+    //reset inputs
     document.getElementById('calibration-run-time-1').value = '';
     document.getElementById('calibration-run-time-2').value = '';
-    document.getElementById('calibration-constant').value = '';
+    document.getElementById('calibration-constant-input').selectedIndex = 0;
+    document.getElementById('calibration-run-time-1').focus();
+
+    //reset outputs
     document.getElementById('calibration-fluid-viscosity').value = '';
     document.getElementById('calibration-average-run-time').textContent = '';
     document.getElementById('calibration-average-viscosity').textContent = '';
@@ -185,19 +178,22 @@ function calibrationReset() {//resets calculation article for further use
     document.getElementById('calibration-tolerance-band').textContent = '';
     document.getElementById('calibration-percentage-difference').textContent = '';
     document.getElementById('calibration-output').textContent = '';
-    document.getElementById('calibration-run-time-1').focus();
-
+    
+    //reset units
     document.getElementById('calibration-average-run-time-units').style.display = 'none';
     document.getElementById('calibration-average-viscosity-units').style.display = 'none';
     document.getElementById('calibration-viscosity-range-units').style.display = 'none';
     document.getElementById('calibration-percentage-difference-units').style.display = 'none';
-    document.getElementById('calibration-details-button').style.display = 'none';
-    document.getElementById('calibration-details').style.display = 'none';
-    document.getElementById('calibration-user-input').style.height = '55vh';
-    document.getElementById('calibration-calculated-output').style.height = '55vh';
+    
+    //reset labels
     document.getElementById('calibration-average-run-time-label').style.display = 'none';
     document.getElementById('calibration-average-viscosity-label').style.display = 'none';
     document.getElementById('calibration-viscosity-range-label').style.display = 'none';
     document.getElementById('calibration-tolerance-band-label').style.display = 'none';
     document.getElementById('calibration-percentage-difference-label').style.display = 'none';
+
+    //reset details
+    document.getElementById('calibration-details-header').style.visibility = 'hidden';
+    document.getElementById('calibration-details-button').style.visibility = 'hidden';
+    document.getElementById('calibration-details').style.visibility = 'hidden';
 }

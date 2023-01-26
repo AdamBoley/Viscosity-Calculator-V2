@@ -28,7 +28,7 @@ function getValuesUbbelohde() {
     else if(runTime1.value === '' || runTime2.value === '') {
         alert('Please enter two run-times');
     }
-    else if(constant.value === '') {
+    else if(constant.value === 'disabled') {
         alert('Please enter a viscometer constant');
     }
     else {
