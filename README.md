@@ -26,7 +26,19 @@ So, the objectives for this project are:
 - Implement automated testing of JavaScript via Jest:
     - pass values to various functions and assert that some value is returned
 
-- Convert vanilla JS to jQuery
+- Convert vanilla JS to jQuery:
+    - convert determinability calculations to jQuery - suspended and reverse done, determinability still to do
+        - My idea here is to use the import and export methods to break the calculations down
+        - At present, the viscosity-suspended.js and viscosity-reverse.js files are imported into determinability-calculations.js
+        - My concern is that I will not be able to separate the 2 incoming streams of information
+        - Therefore, the superior approach may be to define the generic determinability calculations as a function and then import that function into the other files
+        - This is the principle of separation of concerns, where different sets of calculations are performed in different files
+        - Once this is done, it may be possible to implement another file which imports the functions, which acts sort of like a controller, using a conditional to choose which data-stream to use in the determinability calculations
+        
+    - convert repeatability calculations to JQuery
+    - convert reproducibility calculations to jQuery
+    - convert calibration calculations to jQuery
+    - convert recalibration calculations to jQuery
 
 
 ## Development

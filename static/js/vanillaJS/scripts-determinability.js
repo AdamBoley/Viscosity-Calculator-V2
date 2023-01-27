@@ -1,5 +1,9 @@
 //Suspended flow Viscometer / Ubbelohde viscometer logic
 
+// This file uses Vanilla JavaScript, and is coded using an explicit approach that uses named functions
+// These named functions are arranged in chains, with the start of each chain called by an click event listener
+// Each function does a single calculation
+
 document.addEventListener("DOMContentLoaded", function(){
     let getValuesUbbelohdeButton = document.getElementById('submit-ubbelohde');
     getValuesUbbelohdeButton.addEventListener('click', getValuesUbbelohde);

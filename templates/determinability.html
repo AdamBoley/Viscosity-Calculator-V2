@@ -179,6 +179,10 @@
         </div>
 
         <div class="col-12 text-center mt-3">
+            <button type="submit" id="determinability" class="btn btn-success">calculate</button>
+        </div>
+
+        <div class="col-12 text-center mt-3">
 
             <p id="determinability-equation-label" class="output-label">Determinability equation:</p>
             <span id="determinability-equation" class="output-number"></span>
@@ -226,7 +230,14 @@
 
 </div>
 
-<script src="{% static 'js/scripts-determinability.js' %}"></script>
+<script
+    src="https://code.jquery.com/jquery-3.6.3.js"
+    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+
+<script type="module" src="{% static 'js/determinability/determinability-calculations.js' %}"></script>
+
+
 
 {% endblock %}
 
