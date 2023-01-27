@@ -64,6 +64,7 @@ function recalibrationReset() {
     document.getElementById('recalibration-constant').value = '';
     document.getElementById('testing-lab-gravity').value = '';
     document.getElementById('standardisation-lab-gravity').value = '';
+    document.getElementById('recalibration-constant').focus()
     
     document.getElementById('recalibration-percentage-difference-label').style.display = 'none';
     document.getElementById('recalibration-percentage-difference').textContent = '';

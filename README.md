@@ -19,9 +19,9 @@ So, the objectives for this project are:
     - Create a view for each of the 5 different Calculation Articles in the original project - done
 
 - Implement Bootstrap to enable responsiveness:
-    - Add a Bootstrap navbar to base.html
-    - Add Bootstrap elements to templates for each view
-    - Add Django templating language to inject various database items
+    - Add a Bootstrap navbar to base.html - done
+    - Add Bootstrap elements to templates for each view - done
+    - Add Django templating language to inject various database items - done
 
 - Implement automated testing of JavaScript via Jest:
     - pass values to various functions and assert that some value is returned

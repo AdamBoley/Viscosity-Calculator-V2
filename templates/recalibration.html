@@ -2,8 +2,85 @@
 
 {% block content %}
 
-<h1>Recalibration</h1>
+{% load static %}
 
-{% endblock %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <h1 class="text-center">Viscometer Recalibration</h1>
+
+            <h3 class="heading">Instructions for use</h3>
+
+            <ol>
+                <li>Determine acceleration due to gravity at your laboratory's location</li>
+                <li>Determine the acceleration due to gravity at the standardization laboratory's location</li>
+                <li><a href="discussion.html#recalibration" target="_blank">Click here to open the guidance page for more information on viscometer recalibration</a></li>
+                <li>Input the constant of the viscometer you wish to recalibrate</li>
+                <li>Input these two values into the labelled boxes</li>
+                <li>Press <span class="mimic-button">calculate</span>and the tool with provide the percentage difference</li>
+                <li>If the percentage difference is greater than 0.1%, the tool will then provide a new constant for the viscometer</li>
+                <li>Click the <span class="mimic-button">reset</span> button to clear the inputs and outputs and ready the tool to recalibrate another viscometer</li>
+            </ol>
+
+        </div>
+        
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-12 col-md-6 text-center">
+            <div class="mb-3">
+                <label for="recalibration-constant" class="form-label">Viscometer constant:</label>
+                <input type="number" id="recalibration-constant" class="form-control"><span class="input-unit" id="recalibration-constant-units">mm<span class="superscript">2</span>/s<span class="superscript">-2</span></span>
+            </div>
+            <div class="mb-3">
+                <label for="testing-lab-gravity" class="form-label">Acceleration due to gravity at your laboratory's location:</label>
+                <input type="number" id="testing-lab-gravity" class="form-control"><span class="input-unit">m/s</span><span class="superscript">2</span>
+            </div>
+            <div class="mb-3">
+                <label for="standardisation-lab-gravity" class="form-label">Acceleration due to gravity at the standardisation laboratory's location:</label>
+                <input type="number" id="standardisation-lab-gravity" class="form-control"><span class="input-unit">m/s</span><span class="superscript">2</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-0 col-md-3"></div>
+
+        <div class="col-6 col-md-3 text-center">
+            <button id="submit-recalibration" class="btn btn-success">calculate</button>
+        </div>
+
+        <div class="col-6 col-md-3 text-center">
+            <button id="recalibration-reset" class="btn btn-warning">reset</button>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+
+        <h3 class="text-center output-label">Calculation results:</h3>
+
+        <div class="col-12 text-center">
+
+            <p id="recalibration-percentage-difference-label" class="output-label">Percentage difference:</p>
+            <span id="recalibration-percentage-difference" class="output-number"></span><span class="output-unit" id="recalibration-percentage-difference-units">%</span>
+
+        </div>
+
+        <div class="col-12 text-center">
+            <p id="recalibration-new-constant-label" class="output-label">New constant:</p>
+            <span id="recalibration-new-constant" class="output-number"></span><span class="output-unit" id="recalibration-new-constant-units">mm<span class="superscript">2</span>/s<span class="superscript">-2</span></span>
+        </div>
+    
+    </div>
+</div>
 
 <script src="{% static 'js/scripts-recalibration.js' %}"></script>
+
+{% endblock %}
