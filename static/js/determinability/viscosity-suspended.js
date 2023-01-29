@@ -3,17 +3,19 @@
 // It uses inline approach, where as many functions as possible are anonymous, and are declared inside the click event listeners
 // Therefore, the individual functions that make up chains in the original file have been condensed down
 
-export var dataSuspended = {
-    'finalViscosity': 3,
-    'kv1': 2,
-    'kv2': 4
-}
+// export var dataSuspended = {
+//     'finalViscosity': 3,
+//     'kv1': 2,
+//     'kv2': 4
+// }
 //Instantiates an object with some default values
 // These are updated inside the main function - line 44
 
+import { determinability } from "./determinability-calculations.js"
+
 $( document ).ready(main) 
 
-export function main() {
+function main() {
     console.log("suspended ready")
 
     $('#submit-ubbelohde').on('click', function(){
@@ -41,7 +43,7 @@ export function main() {
             let preciseKv1 = kv1.toPrecision(4);
             let preciseKv2 = kv2.toPrecision(4);
 
-            dataSuspended['kv1'] = kv1
+            // dataSuspended['kv1'] = kv1
 
             $('#determinability-results').show();
             $('#determinability-kv-1-label').show();
@@ -68,10 +70,7 @@ export function main() {
 
             // This is where calculateFinalUbbelohde function ends, and the determininability functions begin
             
-            
-
-            
-
+            determinability(kv1, kv2, finalViscosity)
         }
 
     })
