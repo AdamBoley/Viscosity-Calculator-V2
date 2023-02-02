@@ -1,15 +1,7 @@
-// import { dataSuspended } from "./viscosity-suspended.js"
+//This file is not directly imported into the determinability file, but is instead exported and imported into the viscosity-suspended and viscosity-reverse files for use.
 
-// The above imports the dataSuspended object
-
-$( document ).ready(determinability) 
-
-// $(document).ready(function(){
 export function determinability(kv1, kv2, finalViscosity){
     console.log('determinability ready')
-
-    // console.log(dataSuspended.kv1)
-    //This logs out the default value of the dataSuspended object
 
     let select = $('#sample-type-determinability').val()
     let message= ''
@@ -129,5 +121,3 @@ export function determinability(kv1, kv2, finalViscosity){
         //This logs out the updated value of the dataSuspended object
     })
 }
-// )
-

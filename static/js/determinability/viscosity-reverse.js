@@ -54,17 +54,7 @@ $(document).ready(function(){
 
             $('#determinability-details').append(`<p>The final calculated viscosity is ${finalViscosity} cSt</p>`);
 
-            determinability()
-
-            //This is where calculateFinalZeitfuchs ends
-
-            // let dataReverse = {
-            //     'finalViscosity': finalViscosity,
-            //     'kv1': kv1,
-            //     'kv2': kv2,
-            // }
-
-            // module.exports = {dataReverse}
+            determinability(kv1, kv2, finalViscosity)
         }
     })
 })
