@@ -3,19 +3,10 @@
 // It uses inline approach, where as many functions as possible are anonymous, and are declared inside the click event listeners
 // Therefore, the individual functions that make up chains in the original file have been condensed down
 
-// export var dataSuspended = {
-//     'finalViscosity': 3,
-//     'kv1': 2,
-//     'kv2': 4
-// }
-//Instantiates an object with some default values
-// These are updated inside the main function - line 44
-
 import { determinability } from "./determinability-calculations.js"
 
-$( document ).ready(main) 
+$( document ).ready(function(){
 
-function main() {
     console.log("suspended ready")
 
     $('#submit-ubbelohde').on('click', function(){
@@ -74,4 +65,4 @@ function main() {
         }
 
     })
-}
+})

@@ -5,10 +5,11 @@
 
 import { determinability } from "./determinability-calculations.js"
 
-$(document).ready(function(){
+$( document ).ready(function(){
+
     console.log("reverse ready")
 
-    $('#submit-reverse').on('click', function(){
+    $('#submit-zeitfuchs').on('click', function(){
         let select = $('#sample-type-determinability').val();
         let runTime1 = $('#run-time-1').val();
         let runTime2 = $('#run-time-2').val();
