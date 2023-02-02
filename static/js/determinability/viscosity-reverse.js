@@ -10,7 +10,7 @@ $( document ).ready(function(){
     console.log("reverse ready")
 
     $('#submit-zeitfuchs').on('click', function(){
-        let select = $('#sample-type-determinability').val();
+        let select = $('#sample-type-determinability').find(':selected').val();
         let runTime1 = $('#run-time-1').val();
         let runTime2 = $('#run-time-2').val();
         let constant1 = $('#constant-1-input').val();

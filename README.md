@@ -37,10 +37,12 @@ So, the objectives for this project are:
         - The reset function also probably needs to be abstracted out
     
     - add average time calculation to determinability
-    - convert repeatability calculations to JQuery
-    - convert reproducibility calculations to jQuery
+    - convert repeatability calculations to JQuery - done
+    - convert reproducibility calculations to jQuery - done
     - convert calibration calculations to jQuery
     - convert recalibration calculations to jQuery
+
+    - Issue noted - the 
 
 
 ## Development

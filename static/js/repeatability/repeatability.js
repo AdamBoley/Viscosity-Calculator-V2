@@ -8,7 +8,7 @@ $( document ).ready(function(){
 
     $('#submit-repeatability').on('click', function(){
 
-        let select = $('#sample-type-repeatability').val();
+        let select = $('#sample-type-repeatability').find(':selected').val();
         let viscosity1 = $('#viscosity-repeatability-1').val();
         let viscosity2 = $('#viscosity-repeatability-2').val();
 

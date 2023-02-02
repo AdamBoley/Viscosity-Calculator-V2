@@ -10,7 +10,7 @@ $( document ).ready(function(){
     console.log("suspended ready")
 
     $('#submit-ubbelohde').on('click', function(){
-        let select = $('select#sample-type-determinability').val()
+        let select = $('#sample-type-determinability').find(":selected").val()
         let runTime1 = $('#run-time-1').val()
         let runTime2 = $('#run-time-2').val()
         let constant = $('select#constant-input').val()
