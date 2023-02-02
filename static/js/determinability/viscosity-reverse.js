@@ -1,6 +1,6 @@
 // This file is designed to replace the zeitfuchs viscometer calculations of scripts-determinability.js
 // It aims to replicate all of the Vanilla JavaScript in that file with jQuery
-// It uses inline approach, where as many functions as possible are anonymous, and are declared inside the click event listeners
+// It uses inline approach, where the function is anonymous, and is declared inside a click event listener
 // Therefore, the individual functions that make up chains in the original file have been condensed down
 
 import { determinability } from "./determinability-calculations.js"

@@ -116,8 +116,4 @@ export function determinability(kv1, kv2, finalViscosity){
         $('#determinability-details').css('visibility', 'visible');
     })
 
-    $('#determinability').on('click', function(){
-        console.log(dataSuspended.kv1)
-        //This logs out the updated value of the dataSuspended object
-    })
 }

@@ -151,8 +151,9 @@
     integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
     crossorigin="anonymous"></script>
 
-<script src="{% static 'js/repeatability-jquery.js' %}"></script>
+<script type="module" src="{% static 'js/repeatability/repeatability.js' %}"></script>
+<script src="{% static 'js/repeatability/repeatability-reset.js' %}"></script>
 
-<script src="{% static 'js/scripts-repeatability.js' %}"></script>
+<!-- <script src="{% static 'js/scripts-repeatability.js' %}"></script> -->
 
 {% endblock %}
