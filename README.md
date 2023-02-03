@@ -37,7 +37,6 @@ So, the objectives for this project are:
     - convert calibration calculations to jQuery
     - convert recalibration calculations to jQuery
 
-    - Issue noted - the 
 
 
 ## Development
@@ -220,6 +219,14 @@ Now the templates can be created
 - To load static files (CSS files, JS files), add `STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]` and `STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')`, as this tells Django to look in the static folder for these files
 
 - Add Bootstrap to templates in standard front-end development
+
+### Jest
+
+- Install Jest with `npm install --save-dev jest`
+
+- This creates a `package.json` file and a `package-lock.json` file
+
+- 
 
 ## Notes
 

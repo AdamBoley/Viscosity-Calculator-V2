@@ -1,9 +1,8 @@
 //This file is not directly imported into the determinability file, but is instead exported and imported into the viscosity-suspended and viscosity-reverse files for use.
 
-export function determinability(kv1, kv2, finalViscosity){
+export function determinability(kv1, kv2, finalViscosity, select){
     console.log('determinability ready')
 
-    let select = $('#sample-type-determinability').val()
     let message= ''
     let determinability
     let preciseDeterminability

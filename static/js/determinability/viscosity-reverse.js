@@ -55,7 +55,7 @@ $( document ).ready(function(){
 
             $('#determinability-details').append(`<p>The final calculated viscosity is ${finalViscosity} cSt</p>`);
 
-            determinability(kv1, kv2, finalViscosity)
+            determinability(kv1, kv2, finalViscosity, select)
         }
     })
 })

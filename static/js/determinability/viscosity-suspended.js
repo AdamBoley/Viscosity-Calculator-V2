@@ -61,7 +61,7 @@ $( document ).ready(function(){
 
             // This is where calculateFinalUbbelohde function ends, and the determininability functions begin
             
-            determinability(kv1, kv2, finalViscosity)
+            determinability(kv1, kv2, finalViscosity, select)
         }
 
     })
