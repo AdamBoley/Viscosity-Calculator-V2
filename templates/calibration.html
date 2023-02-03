@@ -132,10 +132,12 @@
         <div class="col-12 text-center mt-3">
             <p id="calibration-percentage-difference-label" class="output-label">Percentage difference between observed viscosity and calibration fluid viscosity:</p>
             <span id="calibration-percentage-difference" class="output-number"></span><span class="output-unit" id="calibration-percentage-difference-units"> %</span>
-            <p id="calibration-output"></p>
-
         </div>
 
+        <div id="calibration-output" class="col-12 text-center mt-3 output-number"></div>
+    </div>
+
+    <div class="row">
         <div class="col-12 text-center mt-3">
             <p id="calibration-details-header">Click the button below to show a detailed breakdown of the calculations</p>
         </div>
@@ -145,18 +147,20 @@
         </div>
 
         <div class="col-12 text-center mt-3 mb-5" id="calibration-details"></div>
-
-    </div>
+    </div>   
 
 </div>
 
 <script
     src="https://code.jquery.com/jquery-3.6.3.js"
     integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+</script>
 
-<script src="{% static 'js/calibration-jquery.js' %}"></script>
+<script src="https://kit.fontawesome.com/bb77ddf0c5.js" crossorigin="anonymous"></script>
+<script type="module" src="{% static 'js/calibration/calibration.js' %}"></script>
+<script src="{% static 'js/calibration/calibration-reset.js' %}"></script>
 
-<script src="{% static 'js/scripts-calibration.js' %}"></script>
+<!-- <script src="{% static 'js/scripts-calibration.js' %}"></script> -->
 
 {% endblock %}
