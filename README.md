@@ -24,7 +24,7 @@ So, the objectives for this project are:
     - Add Django templating language to inject various database items - done
 
 - Implement automated testing of JavaScript via Jest:
-    - pass values to various functions and assert that some value is returned
+    - pass values to various functions and assert that some value is returned - not done
 
 - Convert vanilla JS to jQuery:
     - convert determinability calculations to jQuery - suspended and reverse done, determinability done
@@ -34,8 +34,8 @@ So, the objectives for this project are:
     
     - convert repeatability calculations to JQuery - done
     - convert reproducibility calculations to jQuery - done
-    - convert calibration calculations to jQuery
-    - convert recalibration calculations to jQuery
+    - convert calibration calculations to jQuery - done
+    - convert recalibration calculations to jQuery - done
 
 
 
@@ -224,9 +224,24 @@ Now the templates can be created
 
 - Install Jest with `npm install --save-dev jest`
 
+- Install DOM testing with `npm install --save-dev jest-environment-jsdom`
+
 - This creates a `package.json` file and a `package-lock.json` file
 
-- 
+- Follow Jest set-up documentation - https://jestjs.io/docs/getting-started
+
+- run `npm test` to run tests
+
+- A discussion on the approach to tests:
+    - The calculation functions do not return values via a return statement
+    - Instead, they perform calculations and post these values to the DOM
+    - These calculations are triggered by buttons
+    - Therefore, we probably need tests that test that the DOM is being manipulated properly
+
+- Problem encountered:
+    - The JS files are currently organised with imported modules, which only has experimental support in Jest
+    - Also, jQuery appears to conflict with Jest - an error is thrown when it encounters $
+
 
 ## Notes
 

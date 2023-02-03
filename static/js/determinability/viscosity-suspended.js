@@ -3,7 +3,7 @@
 // It uses inline approach, where as many functions as possible are anonymous, and are declared inside the click event listeners
 // Therefore, the individual functions that make up chains in the original file have been condensed down
 
-import { determinability } from "./determinability-calculations.js"
+import { determinability } from "./determinability-calculations.js";
 
 $( document ).ready(function(){
 
